@@ -50,9 +50,9 @@
               
                       <div class="row featurette">
                         <div class="col-md-5 order-md-2">
-                          <h2 class="featurette-heading">Team Work Experience</h2> <h6><span class="text-muted"></span></h6>
+                          <h2 class="featurette-heading">Team Work</h2> <h6><span class="text-muted"></span></h6>
                           <h3 class="lead"> The team consisted on 10 undergraduate students at the University of Illinois at Urbana-Champaign.
-                            We were divided into the visualizer team, game engine team (whose job was to run the game logic and output game logs), and the infrastructure team. <br>
+                            We were divided into the visualizer team, game engine team (whose job was to run the game logic and output game logs), and the infrastructure team. <br><br>
                             One of the challenges we faced was the presence of dependencies in our complex workflow. 
                             For instance, I could not finalize my JSON parser if the game engine team did not finalize the structure of their game logs. 
                             And members of the visualizer team could not begin their work until the JSON parser was finished.
@@ -67,26 +67,40 @@
                           </p>
                         </div>
                         <div class="col-md-7 order-md-3">
-                            <img alt = "Elysiam" src = "img/Serath_StateMachine.JPG" style = "height: 400px; width: 100%; display: block;">
+                            <img alt = "Team" src = "img/Mechmania.jpg" style = "height: 400px; width: 100%; display: block;">
                        </div>
                       </div>
 
                       <hr class="featurette-divider">
 
-                      <div class="row featurette">
-                        <div class="col-md-5 order-md-2">
-                          <h2 class="featurette-heading">Technical Contributions</h2> <h6><span class="text-muted"></span></h6>
-                          <h3 class="lead">I value the fluidity and the realism of character motion in all the games I play, so I made sure to incorporate that in Elysiam.<br> <br>
-                            One of the skills I learned from was blending the transition between animations. All of my animation assets are freely downloadable from the UE4 Marketplace.
-                            I reverse engineered the animation blueprint Unreal provided in the asset pack to learn how to use animation state machines, blend spaces, and animation montages. 
-                            The provided blueprint only enabled basic walking/running however, so I used what I had learned to build all of the combat skills and respective transitions.
-                          </h3>
-                          </p>
+                      <div class="row featurette" style="margin: 50px 0px 50px 0px">
+                          <!-- <div class="col-md-7 order-md-3">
+                              <img alt = "Ascend" src = "img/ascend1.jpg" style = "height: 500px; display: block;  border-radius: 12px;">
+                         </div> -->
+                          <!-- <div class="col-md-5 order-md-2"> -->
+                            <h2 class="featurette-heading">Technical Work</h2> <h6><span class="text-muted"></span></h6>
+                            <h3 class="lead"> The code I wrote for the visualizer challenged my ability to break down large tasks into bite-sized, easy to test modular units.
+                              For example, one of my tasks was to write a map generator that takes in graph data (coordinates of nodes, list of edges) and visualizes it within Unity.
+                              I split up my tasks into instantiating the nodes at the given positions, 
+                              calculating the Quaternion rotations of the respective edges with a bit of linear algebra, 
+                              resolving the lengths of the edges depending on how far away its respective nodes were,
+                              and refining the map so there is no unnatural looking merging of gameobjects.
+                              Doing so made debugging my code much easier and increased the readability of my code.<br><br>
+                              During my implementation of the JSON parser, I also learned the significance of reading and re-reading the documentation of library functions.
+                              Unity has a built-in JSON parser that returns objects that correspond to the structures in the JSON.
+                              However, I failed to read the restriction that the JSON structures must be a serializable object in order for Unity to parse it correctly.
+                              Unfortunately, every time I would attempt to use the built-in JSON parser, the entire Unity Engine would crash, leaving me pretty confused and frustrated.
+                              Reading the documentation carefully would have saved me a lot of time and sanity. I know now to avoid this happening again. <br><br>
+                              Working on the visualizer team requires a unique combination between technical ability and artistic instinct. 
+                              Because there were no artists on the team, collaborating with the team members to figure out the final look of the game was important. 
+                              I worked primarily on the final map design, which I made sure to polish with non-repetitive tiles and particle effects to make the world feel more alive.
+                              I am pretty proud of the way it turned out despite not having any art education. 
+                            </h3>
+                            </p>
+                          <!-- </div> -->
                         </div>
-                        <div class="col-md-7 order-md-3">
-                            <img alt = "Elysiam" src = "img/Serath_StateMachine.JPG" style = "height: 400px; width: 100%; display: block;">
-                       </div>
-                      </div>
+
+                        
               
                       <!-- /END THE FEATURETTES -->
               
