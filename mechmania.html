@@ -20,7 +20,6 @@
                   <div class="container d-flex justify-content-between">
                     <a href="index.html" class="navbar-brand">Diana Huang</a>
                   </div>
-<<<<<<< HEAD
                 </div>
           <main role="main">
                 
@@ -45,32 +44,6 @@
                       </div>
                       <div class="carousel-item active">
                           <iframe width="1519" height="549" src="https://www.youtube.com/embed/HPcM6-hJGAw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-=======
-            <main role="main">
-                  
-                    <!-- Marketing messaging and featurettes
-                    ================================================== -->
-                    <!-- Wrap the rest of the page in another container to center all the content. -->
-              
-                    <div class="container marketing">         
-              
-                      <!-- START THE FEATURETTES -->
-                            
-                      <div class="row featurette" style="margin: 50px 0 50px 0px">
-                        <div class="text-center">
-                          <h2 class="featurette-heading">Mechmania 2018 </h2>
-                            <h5><span class="text-muted">
-                            Developer of 24 hour AI hackathon | August 2017 - September 2018</span></h5>
-                          <p class="lead"> Mechmania is a 24 hour AI hackathon held at the annual Reflections Projections conference at the University of Illinois at Urbana-Champaign. <br><br>
-                            I am a developer of the hackathon, specifically a member of the visualizer team. 
-                            My teammates and I are responsible for receiving streams of game data and visualizing the data in Unity3D.
-                            My specific contributions include bridging the gap between the game engine team and the visualizer team with a custom JSON parser, 
-                            creating a map generator for play testing, designing the final map, and implementing some UI elements. <br><br>
-                            Below is a video of the gameplay. It is outdated and will be replaced with a final version when it becomes available.
-                        </div>
-                        <div class="carousel-item active">
-                          <iframe src="https://clips.twitch.tv/embed?clip=InterestingEasyMouseUWot" frameborder="0" allowfullscreen="true" height="378" width="620"></iframe>
->>>>>>> 54207f062a8c4a0ec2de7b6ae403eeb1dd1f8759
                         </div>
                     </div>
                     <div class="row featurette">
@@ -92,7 +65,6 @@
                         </h3>
                         </p>
                       </div>
-<<<<<<< HEAD
                       <div class="col-md-7 order-md-3">
                           <img alt = "Team" src = "img/Mechmania.jpg" style = "height: 400px; width: 100%; display: block;">
                      </div>
@@ -194,106 +166,3 @@
   
   
       <svg xmlns="http://www.w3.org/2000/svg" width="356" height="280" viewBox="0 0 356 280" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="18" style="font-weight:bold;font-size:18pt;font-family:Arial, Helvetica, Open Sans, sans-serif">356x280</text></svg></body></html>
-=======
-              
-                      <div class="row featurette">
-                        <div class="col-md-5 order-md-2">
-                          <h2 class="featurette-heading">Team Work</h2> <h6><span class="text-muted"></span></h6>
-                          <h3 class="lead"> The team consisted on 10 undergraduate students at the University of Illinois at Urbana-Champaign.
-                            We were divided into the visualizer team, game engine team (whose job was to run the game logic and output game logs), and the infrastructure team. <br><br>
-                            One of the challenges we faced was the presence of dependencies in our complex workflow. 
-                            For instance, I could not finalize my JSON parser if the game engine team did not finalize the structure of their game logs. 
-                            And members of the visualizer team could not begin their work until the JSON parser was finished.
-                            We learned the importance of clear communication between members as well as the need to adhere as closely as possible to deadlines we set for ourselves. <br>
-                            Overall, we worked cohesively as a group and proudly presented a great MechMania night. I am excited to work with the team again for MechMania 2019 :) <br> <br>
-                            Meet the Team! <br> 
-                            Project Manager: Jack Ducham <br>
-                            Infrastructure Team: Pranay Prakash, Arshia Malkani <br>
-                            Game Engine Team: Azriel Alvarado, Adi, Jonathan Hoelzel, Noah Feinberg <br>
-                            Visualizer Team: Diana Huang, Jean-Luc Belous, Zehua Chen<br>
-                          </h3>
-                          </p>
-                        </div>
-                        <div class="col-md-7 order-md-3">
-                            <img alt = "Team" src = "img/Mechmania.jpg" style = "height: 400px; width: 100%; display: block;">
-                       </div>
-                      </div>
-
-                      <hr class="featurette-divider">
-
-                      <div class="row featurette" style="margin: 50px 0px 50px 0px">
-                          <!-- <div class="col-md-7 order-md-3">
-                              <img alt = "Ascend" src = "img/ascend1.jpg" style = "height: 500px; display: block;  border-radius: 12px;">
-                         </div> -->
-                          <!-- <div class="col-md-5 order-md-2"> -->
-                            <h2 class="featurette-heading">Technical Work</h2> <h6><span class="text-muted"></span></h6>
-                            <h3 class="lead"> The code I wrote for the visualizer challenged my ability to break down large tasks into bite-sized, easy to test modular units.
-                              For example, one of my tasks was to write a map generator that takes in graph data (coordinates of nodes, list of edges) and visualizes it within Unity.
-                              I split up my tasks into instantiating the nodes at the given positions, 
-                              calculating the Quaternion rotations of the respective edges with a bit of linear algebra, 
-                              resolving the lengths of the edges depending on how far away its respective nodes were,
-                              and refining the map so there is no unnatural looking merging of gameobjects.
-                              Doing so made debugging my code much easier and increased the readability of my code.<br><br>
-                              During my implementation of the JSON parser, I also learned the significance of reading and re-reading the documentation of library functions.
-                              Unity has a built-in JSON parser that returns objects that correspond to the structures in the JSON.
-                              However, I failed to read the restriction that the JSON structures must be a serializable object in order for Unity to parse it correctly.
-                              Unfortunately, every time I would attempt to use the built-in JSON parser, the entire Unity Engine would crash, leaving me pretty confused and frustrated.
-                              Reading the documentation carefully would have saved me a lot of time and sanity. I now know to avoid this happening again. <br><br>
-                              Working on the visualizer team requires a unique combination between technical ability and artistic instinct. 
-                              Because there were no artists on the team, collaborating with the team members to figure out the final look of the game was important. 
-                              I worked primarily on the final map design, which I made sure to polish with non-repetitive tiles and particle effects to make the world feel more alive.
-                              I am pretty proud of the way it turned out despite not having any art education. 
-                            </h3>
-                            </p>
-                          <!-- </div> -->
-                        </div>
-
-                        <hr class="featurette-divider">
-
-                      <div class="row featurette" style="margin: 50px 0px 50px 0px">
-                          <!-- <div class="col-md-7 order-md-3">
-                              <img alt = "Ascend" src = "img/ascend1.jpg" style = "height: 500px; display: block;  border-radius: 12px;">
-                         </div> -->
-                          <!-- <div class="col-md-5 order-md-2"> -->
-                            <h2 class="featurette-heading">My Experience</h2> <h6><span class="text-muted"></span></h6>
-                            <h3 class="lead"> Developing MechMania was one of my greatest experiences at this university.
-                              It taught me many invaluable lessons about how to work effectively and efficiently in a team, which is a lesson rarely learned in the school curriculum.
-                              I was fortunate to work with some of the brightest students I've met at UIUC and make plenty of friends along the way. 
-                              The nights of debugging and stressful game design could be considered grueling, but it all payed off when we watched our game on the big screen and heard the competitors devising intense strategies to win.
-                              For many of us, it was our first shipped game and it feels fantastic when you realize that you've just taken the first step into your game development career because of it.
-                              I will be part of the MechMania 2019 staff so check in in a year for updates!
-                            </h3>
-                            </p>
-                          <!-- </div> -->
-                        </div>
-              
-                      <!-- /END THE FEATURETTES -->
-              
-                    </div><!-- /.container -->
-              
-              
-                    <!-- FOOTER -->
-                    <footer class="container">
-                      <p class="float-right"><a href="#">Back to top</a></p>
-                    </footer>
-                  </main>
-    
-        <!-- Bootstrap core JavaScript
-        ================================================== -->
-        <!-- Placed at the end of the document so the pages load faster -->
-        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-        <script src="assets/js/vendor/holder.min.js"></script>
-        <script>
-          $(function () {
-            Holder.addTheme("thumb", { background: "#55595c", foreground: "#eceeef", text: "Thumbnail" });
-          });
-        </script>
-        <script src="dist/js/bootstrap.min.js"></script>
-        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
-    
-    
-        <svg xmlns="http://www.w3.org/2000/svg" width="356" height="280" viewBox="0 0 356 280" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;"><defs><style type="text/css"></style></defs><text x="0" y="18" style="font-weight:bold;font-size:18pt;font-family:Arial, Helvetica, Open Sans, sans-serif">356x280</text></svg></body></html>
->>>>>>> 54207f062a8c4a0ec2de7b6ae403eeb1dd1f8759
