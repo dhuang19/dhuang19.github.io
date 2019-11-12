@@ -5,7 +5,7 @@ const titleContainer = document.querySelector('#title');
 const readmeContainer = document.querySelector('#README');
 
 const fetchRepo = async () => {
-    const api_call = await fetch('https://api.github.com/repos/dhuang19/Arcade-Asteroid-Shooter?client_id = ${client_id}&client_secret=${client_secret}');
+    const api_call = await fetch('https://api.github.com/repos/dhuang19/dhuang19.github.io?client_id = ${client_id}&client_secret=${client_secret}');
     const data = await api_call.json();
     return { data }
 };
