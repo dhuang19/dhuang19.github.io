@@ -23,7 +23,6 @@
   <!-- Custom styles for this template -->
   <link href="css/agency.min.css" rel="stylesheet">
 
-  <!-- Search bar styles-->
 </head>
 
 <body id="page-top">
@@ -65,46 +64,53 @@
     </div>
   </header>
 
+  <!-- Search -->
   <section>
     <center>
-      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for projects..">
+      <input type="text" id="input" placeholder="Search for projects..">
+      <button class="search-box-button" onclick="searchProjects()" id="inputBtn">
+          <img src="/img/search.png" style="width: 15px; height: 15px;">
+        </button>
 
-      <ul id="myUL">
-          <li >
-            <a class="portfolio-link CS ASPNETCORE SSO TOOLS" data-toggle="modal" href="#portfolioModalBlizz">Blizzard</a>
+      <ul id="projectUL">
+          <li style="display: none;">
+            <a class="portfolio-link CS C# ASPNETCORE ASP.NETCORE SSO TOOLS" data-toggle="modal" href="#portfolioModalBlizz">Blizzard</a>
           </li>
-          <li>
-            <a class="portfolio-link CS UNITY SCRIPT TOOLS GAMEPLAY" data-toggle="modal" href="#portfolioModalMM">MechMania</a>
+          <li style="display: none;">
+            <a class="portfolio-link CS C# UNITY SCRIPTING TOOLS GAMEPLAY" data-toggle="modal" href="#portfolioModalMM">MechMania</a>
           </li>
-          <li>
-            <a class="portfolio-link CS UNITY OCULUS SCRIPT TOOLS GAMEPLAY UI" data-toggle="modal" href="#portfolioModalVR">Attack of the Bunnies</a>
+          <li style="display: none;">
+            <a class="portfolio-link CS C# UNITY OCULUS VR VIRTUALREALITY SCRIPTING TOOLS GAMEPLAY UI USERINTERFACE" data-toggle="modal" href="#portfolioModalVR">Attack of the Bunnies</a>
           </li>
-          <li>
-            <a class="portfolio-link CPP UNREAL SCRIPT GAMEPLAY UI" data-toggle="modal" href="#portfolioModalEly">Elysium</a>
+          <li style="display: none;">
+            <a class="portfolio-link CPP C++ UNREAL SCRIPTING GAMEPLAY UI USERINTERFACE" data-toggle="modal" href="#portfolioModalEly">Elysium</a>
           </li>
-          <li>
-            <a class="portfolio-link CS UNITY SCRIPT GAMEPLAY UI" data-toggle="modal" href="#portfolioModalAsteroids">Asteroids Arcade</a>
+          <li style="display: none;">
+            <a class="portfolio-link CS C# UNITY SCRIPTING GAMEPLAY UI USERINTERFACE" data-toggle="modal" href="#portfolioModalAsteroids">Asteroids Arcade</a>
           </li>
-          <li>
-            <a class="portfolioother-link CS ASPNETCORE SSO TOOLS" data-toggle="modal" href="#portfoliootherModal1">Other</a>
+          <li style="display: none;">
+            <a class="portfolioother-link CS C# ASPNETCORE ASP.NETCORE SSO TOOLS" data-toggle="modal" href="#portfoliootherModal1">Other</a>
           </li>
         </ul>
 
       <script>
-          function myFunction() {
-          //Convert input to upper case
-          var input = document.getElementById("myInput");
-          var filter = input.value.toUpperCase();
+          //Submit on enter
+          var input = document.getElementById("input");
+          input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+              event.preventDefault();
+              document.getElementById("inputBtn").click();
+            }
+          });
+
+          function searchProjects() {
+          //Convert input to upper case & remove whitespace
+          var input = document.getElementById("input");
+          var filter = input.value.toUpperCase().replace(/\s+/g, '');
 
           //List of possible projects
-          var ul = document.getElementById("myUL");
+          var ul = document.getElementById("projectUL");
           var li = ul.getElementsByTagName('li');
-
-          //List of accepted inputs
-          var langs = ["C#", "C++", "C", "JAVA", "PYTHON", "CSS", "HTML", "JAVASCRIPT", "VISUAL BASIC", "MIPS", "ASSEMBLY", "VERILOG", "OCAML"];
-          var engines = ["UNITY", "UNREAL"];
-          var frameworks = ["VR", "OCULUS", "REACT NATIVE", "ASP.NET CORE", "RAZOR", "OKTA"];
-          var fields = ["TOOLS", "GAMEPLAY", "SCRIPTING", "SSO", "UI", "MACHINE LEARNING", "ML", "NLP"];
 
           //Loop through list items & make those that match query appear
           for (i=0; i<li.length; i++) 
@@ -117,6 +123,7 @@
               //Go through all classes
               for (j=1; j<cList.length; j++)
               {
+                if (filter != "C") {
                   if (cList[j].indexOf(filter) > -1)
                   {
                     li[i].style.display = "";
@@ -126,19 +133,16 @@
                   {
                     li[i].style.display = "none";
                   }
+                }
+                else {
+                  //Handle C special case
+                  if (cList[j] == "C") {
+                    li[i].style.display = "";
+                    break;
+                  }
+                }
               }
             }
-
-  //           for (i = 0; i < li.length; i++) {
-  //   a = li[i].getElementsByTagName("a")[0];
-  //   txtValue = a.textContent || a.innerText;
-  //   if (txtValue.toUpperCase().indexOf(filter) > -1) {
-  //     li[i].style.display = "";
-  //   } else {
-  //     li[i].style.display = "none";
-  //   }
-  // }
-
           }
         </script>
 
@@ -150,7 +154,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Game Projects</h2>
+          <h2 class="section-heading text-uppercase">Featured Game Projects</h2>
           <h3 class="section-subheading text-muted"></h3>
         </div>
       </div>
