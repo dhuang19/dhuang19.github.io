@@ -23,6 +23,9 @@
   <!-- Custom styles for this template -->
   <link href="css/agency.min.css" rel="stylesheet">
 
+  <!-- Styling for Search Function -->
+  <link href="css/search.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -65,28 +68,31 @@
   </header>
 
   <!-- Search -->
-  <section>
-    <center>
-      <input type="text" id="input" placeholder="Search for projects..">
-      <button class="search-box-button" onclick="searchProjects()" id="inputBtn">
+  <section class="grid-container">
+      <!--Search Bar-->
+      <div class="search grid-bar">
+        <input type="text" class="searchTerm" id="input" placeholder="Search for projects..">
+        <button class="searchButton" onclick="searchProjects()" id="inputBtn">
           <img src="/img/search.png" style="width: 15px; height: 15px;">
         </button>
+      </div>
 
-      <ul id="projectUL">
+      <!-- List of projects to search from -->
+      <ul class="grid-list" id="projectUL">
           <li style="display: none;">
-            <a class="portfolio-link CS C# ASPNETCORE ASP.NETCORE SSO TOOLS" data-toggle="modal" href="#portfolioModalBlizz">Blizzard</a>
+            <a class="portfolio-link CS C# ASPNETCORE ASP.NETCORE SSO TOOLS" data-toggle="modal" href="#portfolioModalBlizz">Blizzard Entertainmet Internship | SWE Intern on QA Tools</a>
           </li>
           <li style="display: none;">
-            <a class="portfolio-link CS C# UNITY SCRIPTING TOOLS GAMEPLAY" data-toggle="modal" href="#portfolioModalMM">MechMania</a>
+            <a class="portfolio-link CS C# UNITY SCRIPTING TOOLS GAMEPLAY" data-toggle="modal" href="#portfolioModalMM">MechMania | Engineering Lead of 24-hr AI hackathon</a>
           </li>
           <li style="display: none;">
-            <a class="portfolio-link CS C# UNITY OCULUS VR VIRTUALREALITY SCRIPTING TOOLS GAMEPLAY UI USERINTERFACE" data-toggle="modal" href="#portfolioModalVR">Attack of the Bunnies</a>
+            <a class="portfolio-link CS C# UNITY OCULUS VR VIRTUALREALITY SCRIPTING TOOLS GAMEPLAY UI USERINTERFACE" data-toggle="modal" href="#portfolioModalVR">Attack of the Bunnies | Engineering Lead of VR Tower Defense Game</a>
           </li>
           <li style="display: none;">
-            <a class="portfolio-link CPP C++ UNREAL SCRIPTING GAMEPLAY UI USERINTERFACE" data-toggle="modal" href="#portfolioModalEly">Elysium</a>
+            <a class="portfolio-link CPP C++ UNREAL SCRIPTING GAMEPLAY UI USERINTERFACE" data-toggle="modal" href="#portfolioModalEly">Elysium | Sole Developer of Unreal RPG</a>
           </li>
           <li style="display: none;">
-            <a class="portfolio-link CS C# UNITY SCRIPTING GAMEPLAY UI USERINTERFACE" data-toggle="modal" href="#portfolioModalAsteroids">Asteroids Arcade</a>
+            <a class="portfolio-link CS C# UNITY SCRIPTING GAMEPLAY UI USERINTERFACE" data-toggle="modal" href="#portfolioModalAsteroids">Asteroids Arcade | Sole Developer of Unity Arcade Game</a>
           </li>
           <li style="display: none;">
             <a class="portfolioother-link CS C# ASPNETCORE ASP.NETCORE SSO TOOLS" data-toggle="modal" href="#portfoliootherModal1">Other</a>
@@ -145,8 +151,6 @@
             }
           }
         </script>
-
-    </center>
   </section>
 
   <!-- Game Projects Grid -->
