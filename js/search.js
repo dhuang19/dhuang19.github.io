@@ -1,18 +1,38 @@
-function searchProject() {
-    //Convert input to upper case
-    var input = document.getElementById("searchInput");
-    var filter = input.nodeValue.toUpperCase();
+//Detects when there's no input automatically
+function detectEmpty()
+{
+  var ul = document.getElementById("projectUL");
+  var li = ul.getElementsByTagName('li');
 
-    //List of possible projects
-    var ul = document.getElementById("projectUL");
-    var li = ul.getElementsByTagName('li');
+  var input = document.getElementById("input");
+  if (input.value == "") 
+  {
+    for (i=0; i<li.length; i++)
+    {
+      li[i].style.display = "none";
+    }
+  }
+}
 
-    //List of accepted inputs
-    var langs = ["C#", "C++", "C", "JAVA", "PYTHON", "CSS", "HTML", "JAVASCRIPT", "VISUAL BASIC", "MIPS", "ASSEMBLY", "VERILOG", "OCAML"];
-    var engines = ["UNITY", "UNREAL"];
-    var frameworks = ["VR", "OCULUS", "REACT NATIVE", "ASP.NET CORE", "RAZOR", "OKTA"];
-    var fields = ["TOOLS", "GAMEPLAY", "SCRIPTING", "SSO", "UI", "MACHINE LEARNING", "ML", "NLP"];
+//Search projecs list on enter with keyword
+function searchProjects() 
+{
+  var ul = document.getElementById("projectUL");
+  var li = ul.getElementsByTagName('li'); 
 
+  //Convert input to upper case & remove whitespace
+  var input = document.getElementById("input");
+  var filter = input.value.toUpperCase().replace(/\s+/g, '');
+
+  if (input.value == "")
+  {
+    for (i=0; i<li.length; i++)
+    {
+      li[i].style.display = "none";
+    }
+  }
+  else 
+  {
     //Loop through list items & make those that match query appear
     for (i=0; i<li.length; i++) 
     {
@@ -21,62 +41,28 @@ function searchProject() {
         //Retrieve class list of <a> element
         var cList = a.classList;
 
-        var display = false;
-
-        //Search in langs
-        for (j=0; j<langs.length; j++)
+        //Go through all classes
+        for (j=1; j<cList.length; j++)
         {
-            if (langs[j].indexOf(filter) > -1)
+          if (filter != "C") {
+            if (cList[j].indexOf(filter) > -1)
             {
-                display = true;
-            } else 
-            {
-                display = false;
+              li[i].style.display = "";
+              break;
             }
-        }
-
-        //Search in engines
-        for (j=0; j<engines.length; j++)
-        {
-            if (engines[j].indexOf(filter) > -1)
+            else 
             {
-                display = true;
-            } else 
-            {
-                display = false;
+              li[i].style.display = "none";
             }
-        }
-
-        //Search in frameworks
-        for (j=0; j<frameworks.length; j++)
-        {
-            if (frameworks[j].indexOf(filter) > -1)
-            {
-                display = true;
-            } else 
-            {
-                display = false;
+          }
+          else {
+            //Handle C special case
+            if (cList[j] == "C") {
+              li[i].style.display = "";
+              break;
             }
+          }
         }
-
-        //Search in fields
-        for (j=0; j<fields.length; j++)
-        {
-            if (fields[j].indexOf(filter) > -1)
-            {
-                display = true;
-            } else 
-            {
-                display = false;
-            }
-        }
-
-        if (display)
-        {
-            li[i].style.display = "";
-        } else 
-        {
-            li[i].style.display = "none";
-        }
+      }
     }
 }
