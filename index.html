@@ -23,6 +23,7 @@
   <!-- Custom styles for this template -->
   <link href="css/agency.min.css" rel="stylesheet">
 
+  <!-- Search bar styles-->
 </head>
 
 <body id="page-top">
@@ -64,6 +65,86 @@
     </div>
   </header>
 
+  <section>
+    <center>
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for projects..">
+
+      <ul id="myUL">
+          <li >
+            <a class="portfolio-link CS ASPNETCORE SSO TOOLS" data-toggle="modal" href="#portfolioModalBlizz">Blizzard</a>
+          </li>
+          <li>
+            <a class="portfolio-link CS UNITY SCRIPT TOOLS GAMEPLAY" data-toggle="modal" href="#portfolioModalMM">MechMania</a>
+          </li>
+          <li>
+            <a class="portfolio-link CS UNITY OCULUS SCRIPT TOOLS GAMEPLAY UI" data-toggle="modal" href="#portfolioModalVR">Attack of the Bunnies</a>
+          </li>
+          <li>
+            <a class="portfolio-link CPP UNREAL SCRIPT GAMEPLAY UI" data-toggle="modal" href="#portfolioModalEly">Elysium</a>
+          </li>
+          <li>
+            <a class="portfolio-link CS UNITY SCRIPT GAMEPLAY UI" data-toggle="modal" href="#portfolioModalAsteroids">Asteroids Arcade</a>
+          </li>
+          <li>
+            <a class="portfolioother-link CS ASPNETCORE SSO TOOLS" data-toggle="modal" href="#portfoliootherModal1">Other</a>
+          </li>
+        </ul>
+
+      <script>
+          function myFunction() {
+          //Convert input to upper case
+          var input = document.getElementById("myInput");
+          var filter = input.value.toUpperCase();
+
+          //List of possible projects
+          var ul = document.getElementById("myUL");
+          var li = ul.getElementsByTagName('li');
+
+          //List of accepted inputs
+          var langs = ["C#", "C++", "C", "JAVA", "PYTHON", "CSS", "HTML", "JAVASCRIPT", "VISUAL BASIC", "MIPS", "ASSEMBLY", "VERILOG", "OCAML"];
+          var engines = ["UNITY", "UNREAL"];
+          var frameworks = ["VR", "OCULUS", "REACT NATIVE", "ASP.NET CORE", "RAZOR", "OKTA"];
+          var fields = ["TOOLS", "GAMEPLAY", "SCRIPTING", "SSO", "UI", "MACHINE LEARNING", "ML", "NLP"];
+
+          //Loop through list items & make those that match query appear
+          for (i=0; i<li.length; i++) 
+          {
+              //Retrieve <a> element
+              var a = li[i].getElementsByTagName("a")[0];
+              //Retrieve class list of <a> element
+              var cList = a.classList;
+
+              //Go through all classes
+              for (j=1; j<cList.length; j++)
+              {
+                  if (cList[j].indexOf(filter) > -1)
+                  {
+                    li[i].style.display = "";
+                    break;
+                  }
+                  else 
+                  {
+                    li[i].style.display = "none";
+                  }
+              }
+            }
+
+  //           for (i = 0; i < li.length; i++) {
+  //   a = li[i].getElementsByTagName("a")[0];
+  //   txtValue = a.textContent || a.innerText;
+  //   if (txtValue.toUpperCase().indexOf(filter) > -1) {
+  //     li[i].style.display = "";
+  //   } else {
+  //     li[i].style.display = "none";
+  //   }
+  // }
+
+          }
+        </script>
+
+    </center>
+  </section>
+
   <!-- Game Projects Grid -->
   <section class="bg-light page-section" id="portfolio">
     <div class="container">
@@ -75,7 +156,7 @@
       </div>
       <div class="row">
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModalBlizz">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-3x"></i>
@@ -97,7 +178,7 @@
           </div>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModalMM">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-3x"></i>
@@ -116,7 +197,7 @@
           </div>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModalVR">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-3x"></i>
@@ -135,7 +216,7 @@
           </div>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModalEly">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-3x"></i>
@@ -154,7 +235,7 @@
           </div>
         </div>
         <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+          <a class="portfolio-link" data-toggle="modal" href="#portfolioModalAsteroids">
             <div class="portfolio-hover">
               <div class="portfolio-hover-content">
                 <i class="fas fa-3x"></i>
@@ -269,6 +350,7 @@
               <p class="large text-muted" >
                 Unity <br/>
                 Unreal 4 <br/>
+                Oculus VR <br/>
                 React Native <br/>
                 ASP.NET Core MVC <br/>
                 Razor Pages <br/>
@@ -287,6 +369,8 @@
                 Gameplay <br/>
                 SSO <br/>
                 User Interface <br/>
+                Machine Learning <br/>
+                Natural Language Processing<br/>
               </p>
           </div>
         </div>
@@ -334,8 +418,42 @@
 
   <!-- Portfolio Modals -->
 
-  <!-- Modal 1 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Other Modal -->
+    <div class="portfolio-modal modal fade" id="portfoliootherModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+              <div class="lr">
+                <div class="rl"></div>
+              </div>
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-8 mx-auto">
+                  <div class="modal-body">
+                    <!-- Project Details Go Here -->
+                    <h2 class="text-uppercase">Project Name</h2>
+                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
+                    <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                    <ul class="list-inline">
+                      <li>Date: January 2017</li>
+                      <li>Client: Threads</li>
+                      <li>Category: Illustration</li>
+                    </ul>
+                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                      <i class="fas fa-times"></i>
+                      Close Project</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Blizzard Modal -->
+  <div class="portfolio-modal modal fade" id="portfolioModalBlizz" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
@@ -368,8 +486,8 @@
     </div>
   </div>
 
-  <!-- Modal 2 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- MM Modal -->
+  <div class="portfolio-modal modal fade" id="portfolioModalMM" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
@@ -402,8 +520,8 @@
     </div>
   </div>
 
-  <!-- Modal 3 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Bunnies Modal -->
+  <div class="portfolio-modal modal fade" id="portfolioModalVR" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
@@ -436,8 +554,8 @@
     </div>
   </div>
 
-  <!-- Modal 4 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Elysium Modal -->
+  <div class="portfolio-modal modal fade" id="portfolioModalEly" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
@@ -470,8 +588,8 @@
     </div>
   </div>
 
-  <!-- Modal 5 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+  <!-- Asteroids Modal   -->
+  <div class="portfolio-modal modal fade" id="portfolioModalAsteroids" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="close-modal" data-dismiss="modal">
