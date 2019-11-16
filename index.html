@@ -44,6 +44,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav text-uppercase ml-auto">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="#search">Search</a>
+              </li>
             <li class="nav-item">
               <a class="nav-link js-scroll-trigger" href="#portfolio">Game Projects</a>
             </li>
@@ -72,7 +75,7 @@
   </header>
 
   <!-- Search -->
-  <section class="grid-container bg-light page-section">
+  <section class="grid-container bg-light page-section" id="search">
 
       <div class="row grid-title">
         <div class="col-lg-12 text-center">
@@ -89,7 +92,12 @@
         </button>
       </div>
 
-      <h3 class="grid-error" style="display: none;" id="errormsg">Found no matches</h3>
+      <!-- Error Message -->
+      <div class="row grid-error">
+        <div class="text-center">
+          <h3 class="section-subheading text-muted" style="display: none;" id="errormsg">No projects found :(</h3>
+        </div>
+      </div>
 
       <!-- Script to submit on enter -->
       <script>

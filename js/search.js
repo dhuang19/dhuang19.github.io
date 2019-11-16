@@ -61,7 +61,8 @@ function searchProjects()
               li[i].style.display = "none";
             }
           }
-          else {
+          else 
+          {
             //Handle C special case
             if (cList[j] == "C") {
               li[i].style.display = "";
@@ -71,7 +72,6 @@ function searchProjects()
           }
         }
         
-        //Display error message if found nothing
         if (!found) {
             h.style.display = "";
         }
