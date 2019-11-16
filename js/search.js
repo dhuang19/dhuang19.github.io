@@ -3,6 +3,7 @@ function detectEmpty()
 {
   var ul = document.getElementById("projectUL");
   var li = ul.getElementsByTagName('li');
+  var h = document.getElementById("errormsg");
 
   var input = document.getElementById("input");
   if (input.value == "") 
@@ -11,6 +12,7 @@ function detectEmpty()
     {
       li[i].style.display = "none";
     }
+    h.style.display = "none";
   }
 }
 
@@ -19,6 +21,7 @@ function searchProjects()
 {
   var ul = document.getElementById("projectUL");
   var li = ul.getElementsByTagName('li'); 
+  var h = document.getElementById("errormsg");
 
   //Convert input to upper case & remove whitespace
   var input = document.getElementById("input");
@@ -30,10 +33,12 @@ function searchProjects()
     {
       li[i].style.display = "none";
     }
+    h.style.display = "";
   }
   else 
   {
     //Loop through list items & make those that match query appear
+    var found = false;
     for (i=0; i<li.length; i++) 
     {
         //Retrieve <a> element
@@ -48,6 +53,7 @@ function searchProjects()
             if (cList[j].indexOf(filter) > -1)
             {
               li[i].style.display = "";
+              found = true;
               break;
             }
             else 
@@ -59,9 +65,19 @@ function searchProjects()
             //Handle C special case
             if (cList[j] == "C") {
               li[i].style.display = "";
+              found = true;
               break;
             }
           }
+        }
+        
+        //Display error message if found nothing
+        if (!found) {
+            h.style.display = "";
+        }
+        else
+        {
+            h.style.display = "none";
         }
       }
     }
