@@ -414,12 +414,12 @@ header.masthead .intro-text .intro-heading {
 }
 
 #portfolioother .portfolioother-item .portfolioother-link .portfolioother-hover .portfolioother-hover-content {
-  font-size: 20px;
+  font-size: 1vw;
   position: absolute;
-  top: 50%;
-  width: 100%;
+  top: 10%;
+  left: 5%;
+  right: 5%;
   height: 20px;
-  margin-top: -12px;
   text-align: center;
   color: white;
 }
@@ -428,19 +428,9 @@ header.masthead .intro-text .intro-heading {
   margin-top: -12px;
 }
 
-#portfolioother .portfolioother-item .portfolioother-link .portfolioother-hover:hover .portfolioother-hover-content p {
-  font-size: 15px;
-  color: white;
-  padding: 25px;
-  padding-top: 20%;
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
-  text-align: left;
-}
-
 #portfolioother .portfolioother-item .portfolioother-link .portfolioother-hover .portfolioother-hover-content h3,
 #portfolioother .portfolioother-item .portfolioother-link .portfolioother-hover .portfolioother-hover-content h4 {
-  margin: 0;
+  padding: 10px;
 }
 
 #portfolioother .portfolioother-item .portfolioother-caption {
