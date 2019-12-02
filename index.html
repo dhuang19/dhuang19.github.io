@@ -243,21 +243,6 @@
             <p class="text-muted">Sole Developer</p>
           </div>
         </div>
-
-        <!-- <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfoliootherModal1">
-            <div class="portfolio-hover">
-              <p class="portfolio-hover-content">
-                This website, which features homemade search functionality & dynamic poulation of project information.</p>
-            </div>
-            <img class="img-fluid" src="img/portfolio/asteroids.jpg" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Personal Portfolio</h4>
-            <p class="text-muted">Sole Developer</p>
-          </div>
-        </div> -->
-
       </div>
     </div>
   </section>
@@ -444,14 +429,42 @@
               <div class="modal-body">
                 <!-- Project Details Go Here -->
                 <h2 class="text-uppercase">Blizzard Entertainment</h2>
-                <p class="item-intro text-muted">Software Engineering Intern</p>
+                <p class="item-intro text-muted">Software Engineering Intern | June 2019 - Aug 2019</p>
                 <img class="img-fluid d-block mx-auto" src="img/portfolio/blizz.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: June 2019 - August 2019</li>
-                  <li>Languages: C#, JS/CSS/HTML</li>
-                  <li>Frameworks: ASP.NET CORE MVC, Razor Pages, Okta SSO</li>
-                </ul>
+
+                <!-- Project Technical Details -->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="team-member">
+                        <h5>
+                          LANGUAGES
+                        </h5>
+                        <p class="large text-muted">
+                          C# <br/>
+                          CSS/HTML/JS <br/>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="team-member">
+                        <h5>
+                          FRAMEWORKS
+                        </h5>
+                        <p class="large text-muted">
+                          ASP.NET CORE MVC <br/>
+                          Razor Pages <br/>
+                          Okta SSO <br/>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Project Summary Text -->
+                <p>
+                  WIP
+                </p>
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
                   Close Project</button>
@@ -477,15 +490,100 @@
             <div class="col-lg-8 mx-auto">
               <div class="modal-body">
                 <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/02-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Explore</li>
-                  <li>Category: Graphic Design</li>
-                </ul>
+                <h2 class="text-uppercase">MechMania 2018 & 2019</h2>
+                <p class="item-intro text-muted">Visualizer Team Lead | Oct 2017 - 2019</p>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/mm.jpg" alt="">
+                <!-- <iframe class="d-block mx-auto" width="900" height="auto" src="https://www.youtube.com/embed/HPcM6-hJGAw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                <!-- Project Technical Details -->
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="team-member">
+                        <h5>
+                          LANGUAGES
+                        </h5>
+                        <p class="large text-muted">
+                          C# <br/>
+                          JSON <br/>
+                        </p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="team-member">
+                        <h5>
+                          FRAMEWORKS
+                        </h5>
+                        <p class="large text-muted">
+                          Unity 3D
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Project Summary Text -->
+                <div class="description">
+                  <h4>
+                    OVERVIEW
+                  </h4>
+                  <p>
+                    Mechmania is a 24 hour AI hackathon held at the annual Reflections Projections conference at the University of Illinois at Urbana-Champaign. <br/><br/>
+                    I am a developer of the hackathon.
+                    My teammates and I were responsible for receiving streams of game data and visualizing the data in Unity3D.
+                    During MM 2018, I implemented a custom JSON parser to bridge the gap between the game engine team and the visualizer team, 
+                    created a map generator for play testing, implemented the dynamic camera movement, designed the final map, and implemented some UI elements.
+                  </p>
+                </div>
+
+                <!-- Project Teamwork Text -->
+                <div class="description">
+                  <h4>
+                    TEAMWORK
+                  </h4>
+                  <p>
+                    The team consisted on 10 undergraduate students at the University of Illinois at Urbana-Champaign.
+                    We were divided into the visualizer team, game engine team (whose job was to run the game logic and output game logs), and the infrastructure team. <br><br>
+                    One of the challenges we faced was the presence of dependencies in our complex workflow. 
+                    For instance, I could not finalize my JSON parser if the game engine team did not finalize the structure of their game logs. 
+                    And members of the visualizer team could not begin their work until the JSON parser was finished.
+                    I clearly communicated task dependancies which prevented my teammembers from becoming blocked. 
+                    Overall, we worked cohesively as a group and proudly presented a great MechMania tournament. I am excited to work with the team again for MechMania 2019.
+                  </p>
+                </div>
+
+                <!-- Technical Text-->
+                <div class="description">
+                  <h4>
+                    TECHNICAL WORK
+                  </h4>
+                  <p>
+                    The code I wrote for the visualizer challenged my ability to break down large tasks into bite-sized, easy to test modular units.
+                    For example, one of my tasks was to write a map generator that takes in graph data (coordinates of nodes, list of edges) and visualizes it within Unity.
+                    I split up my tasks into instantiating the nodes at the given positions, 
+                    calculating the Quaternion rotations of the respective edges with a bit of linear algebra, 
+                    resolving the lengths of the edges depending on how far away its respective nodes were,
+                    and refining the map so there is no unnatural looking merging of gameobjects.
+                    Doing so made debugging my code much easier and increased the readability of my code.<br><br>
+                    Working on the visualizer team requires a unique combination between technical ability and artistic instinct. 
+                    Because there were no artists on the team, collaborating with the team members to figure out the final look of the game was important. 
+                    I worked primarily on the final map design, which I made sure to polish with non-repetitive tiles and particle effects to make the world feel more alive.
+                  </p>
+                </div>
+
+                <!--Statistics-->
+                <div class="description">
+                  <h4>
+                    STATISTICS
+                  </h4>
+                  <p>
+                    MechMania 2018 had many firsts with the use of a new client system, a language agnostic option for contestants, and live twitch streams of the matches. <br><br>
+                    While Mechmania was streaming, it was the top programming stream on twitch for its duration with a total of 585 viewers. <br><br>
+                    A total of 41 teams entered with 37 teams finishing the competition. <br><br>1382 bots were submitted and 43,011 total matches were played. 
+                    All resulting in a total number of ~9558 computed hours. <br><br>
+                    More information about the tournament and its history can be found here: https://en.wikipedia.org/wiki/MechMania
+                  </p>
+                </div>
+
                 <button class="btn btn-primary" data-dismiss="modal" type="button">
                   <i class="fas fa-times"></i>
                   Close Project</button>
