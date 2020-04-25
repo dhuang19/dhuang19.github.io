@@ -1,756 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
-
-  <title>Diana Huang</title>
-
-  <!-- Bootstrap core CSS -->
-  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom fonts for this template -->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-  <!-- Custom styles for this template -->
-  <link href="css/agency.css" rel="stylesheet">
-
-  <!-- Search Bar -->
-  <link href="css/search.css" rel="stylesheet">
-  <script src="/js/search.js"></script>
-
-  <!-- Fade in effects -->
-  <link href="/css/fade.css" rel="stylesheet">
-
-</head>
-
-<body id="page-top">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
-      <div class="container">
-        <a class="navbar-brand js-scroll-trigger" href="#page-top">Diana Huang</a>
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          Menu
-          <i class="fas fa-bars"></i>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav text-uppercase ml-auto">
-              <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#search">Search</a>
-              </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolio">Game Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#portfolioother">Other Projects</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-  <!-- Header -->
-  <header class="masthead">
-    <div class="container">
-      <div class="intro-text animated animatedFadeInUp fadeInUp">
-        <div class="intro-lead-in">Hello, I'm Diana!</div>
-        <div class="intro-lead-custom">I am a passionate and professional tools engineer who loves to develop game-focused applications.</div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Search -->
-  <section class="grid-container bg-light page-section" id="search">
-
-      <div class="row grid-title">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Find a Project</h2>
-          <h3 class="section-subheading text-muted">Search by language, framework, field, or role!</h3>
-        </div>
-      </div>
-
-      <!--Search Bar-->
-      <div class="search grid-bar">
-        <input type="text" class="searchTerm" id="input" placeholder="Ex. 'C#' to find projects using C#" onkeyup="detectEmpty()">
-        <button class="searchButton" onclick="searchProjects()" id="inputBtn">
-          <img src="/img/search.png" style="width: 15px; height: 15px;">
-        </button>
-      </div>
-
-      <!-- Error Message -->
-      <div class="row grid-error">
-        <div class="text-center">
-          <h3 class="section-subheading text-muted" style="display: none;" id="errormsg">No projects found :(</h3>
-        </div>
-      </div>
-
-      <!-- Script to submit on enter -->
-      <script>
-        //Submit on enter
-        var input = document.getElementById("input");
-        input.addEventListener("keyup", function(event) {
-          if (event.keyCode === 13) {
-            event.preventDefault();
-            document.getElementById("inputBtn").click();
-          }
-        });
-      </script>
-
-      <!-- List of projects to search from -->
-      <ul class="grid-list" id="projectUL">
-          <li style="display: none;">
-            <a class="portfolio-link CS C# ASPNETCORE ASP.NETCORE SSO TOOLS INTERNSHIP" data-toggle="modal" href="#portfolioModalBlizz"><b>Blizzard Entertainmet Internship </b> | SWE Intern on QA Tools</a>
-          </li>
-          <li style="display: none;">
-            <a class="portfolio-link CS C# UNITYENGINE SCRIPTING TOOLS GAMEPLAY LEADENGINEER" data-toggle="modal" href="#portfolioModalMM"><b>MechMania </b> | Engineering Lead of 24-hr AI hackathon</a>
-          </li>
-          <li style="display: none;">
-            <a class="portfolio-link CS C# UNITYENGINE OCULUS VR VIRTUALREALITY SCRIPTING TOOLS GAMEPLAY UI USERINTERFACE LEADENGINEER" data-toggle="modal" href="#portfolioModalVR"><b>Attack of the Bunnies </b> | Engineering Lead of VR Tower Defense Game</a>
-          </li>
-          <li style="display: none;">
-            <a class="portfolio-link CPP C++ UNREALENGINE SCRIPTING GAMEPLAY UI USERINTERFACE SOLE" data-toggle="modal" href="#portfolioModalEly"><b>Elysium </b> | Sole Developer of Unreal RPG</a>
-          </li>
-          <li style="display: none;">
-            <a class="portfolio-link CS C# UNITYENGINE SCRIPTING GAMEPLAY UI USERINTERFACE SOLE" data-toggle="modal" href="#portfolioModalAsteroids"><b>Asteroids Arcade </b> | Sole Developer of Unity Arcade Game</a>
-          </li>
-          <li style="display: none;">
-            <a class="portfolioother-link CS C# ASPNETCORE ASP.NETCORE SSO TOOLS" data-toggle="modal" href="#portfoliootherModal1">Other</a>
-          </li>
-        </ul>
-  </section>
-
-  <!-- Game Projects Grid -->
-  <section class="bg-light page-section" id="portfolio">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Featured Game Projects</h2>
-          <h3 class="section-subheading text-muted"></h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModalBlizz">
-            <div class="portfolio-hover">
-              <p class="portfolio-hover-content">
-                Web crawler that utilizes homemade web API to handle SSO against gated company network and generate reports on faulty links.
-              </p>
-            </div>
-            <img class="img-fluid" src="img/portfolio/blizz.jpg" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Blizzard Entertainment</h4>
-            <p class="text-muted">Software Engineering Intern</p>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModalMM">
-            <div class="portfolio-hover">
-              <p class="portfolio-hover-content">
-                A 24-hour AI Hackathon
-              </p>
-            </div>
-            <img class="img-fluid" src="img/portfolio/mm.jpg" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>MechMania</h4>
-            <p class="text-muted">Engineering Lead</p>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModalVR">
-            <div class="portfolio-hover">
-              <p class="portfolio-hover-content">
-                Archery tower defense virtual reality game
-              </p>
-            </div>
-            <img class="img-fluid" src="img/portfolio/vr.jpg" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Attack of the Bunnies</h4>
-            <p class="text-muted">Engineering Lead</p>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModalEly">
-            <div class="portfolio-hover">
-              <p class="portfolio-hover-content">
-                RPG built in Unreal
-              </p>
-            </div>
-            <img class="img-fluid" src="img/portfolio/ely.jpg" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Elysium</h4>
-            <p class="text-muted">Sole Developer</p>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6 portfolio-item">
-          <a class="portfolio-link" data-toggle="modal" href="#portfolioModalAsteroids">
-            <div class="portfolio-hover">
-              <p class="portfolio-hover-content">
-                Unity game inspired by the classic Asteroids Arcade.
-              </p>
-            </div>
-            <img class="img-fluid" src="img/portfolio/asteroids.jpg" alt="">
-          </a>
-          <div class="portfolio-caption">
-            <h4>Asteroids Arcade</h4>
-            <p class="text-muted">Sole Developer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Other Projects Grid -->
-  <section class="bg-light page-section" id="portfolioother">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Other Projects</h2>
-          <h3 class="section-subheading text-muted">A collection of my personal projects.</h3>
-        </div>
-      </div>
-      <div class="row">
-        
-        <div class="col-md-4 col-sm-6 portfolioother-item">
-          <a class="portfolioother-link" data-toggle="modal" href="#portfoliootherModal1">
-            <div class="portfolioother-hover">
-              <p class="portfolioother-hover-content">
-                This website, which features homemade search functionality & dynamic poulation of project information.
-              </p>
-            </div>
-            <img class="img-fluid" src="img/portfolio/portfolio.jpg" alt="">
-          </a>
-          <div class="portfolioother-caption">
-            <h4>Personal Portfolio</h4>
-            <p class="text-muted">Sole Developer</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section class="bg-light page-section" id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">About Me</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-5">
-          <div class="team-member">
-            <img class="mx-auto rounded-circle" src="img/profile.jpg" alt="">
-            <h4>Diana Huang</h4>
-            <p class="text-muted">Software Engineer <br> UIUC '19 CS + Ling</p>
-          </div>
-        </div>
-        <div class="col-md-7">
-          <p class="large text-muted">
-            Hello! I'm Diana, a software engineer with a strong passion for game development. 
-            I am specialized in tools engineering and love to find ways to use my technical skills to improve this artistic medium. 
-            I am committed to sharpening my industry skills everyday and constantly improving the quality of my work. <br>
-
-            I am currently an associate software engineer at Blizzard Entertainment.<br><br/>
-
-            In my free time, you can find me exploring different fields through personal projects (currently delving deeper into natural language processing), reading, playing video games, and making/eating some good food! <br></br>
-          </p>
-          <a class="btn btn-primary btn-x2 text-uppercase js-scroll-trigger" style="background-color: #dbf3fa ; color: #a1a1a1de;" href="/docs/resume.pdf" target="_blank">
-            Resume
-          </a>
-        </div>
-      </div>
-      <!--Skills Section-->
-      <div class="container">
-      <div class="row">
-        <div class="col-md-3">
-          <div class="team-member">
-              <h5> 
-                <font color="#2b88a1">
-                  SKILLS
-                </font>
-              </h5>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="team-member">
-              <h5>
-                LANGUAGES
-              </h5>
-              <p class="large text-muted" >
-                C# <br/>
-                C++ <br/>
-                C <br/>
-                Java <br/>
-                Python <br/>
-                CSS/HTML/JS <br/>
-                Visual Basic <br/>
-                MIPS <br/>
-                Verilog <br/>
-                OCaml <br/>
-              </p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="team-member">
-              <h5>
-                ENGINES & FRAMEWORKS
-              </h5>
-              <p class="large text-muted" >
-                Unity <br/>
-                Unreal 4 <br/>
-                Oculus VR <br/>
-                React Native <br/>
-                ASP.NET Core MVC <br/>
-                Razor Pages <br/>
-                Okta <br/>
-              </p>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="team-member">
-              <h5>
-                FIELDS
-              </h5>
-              <p class="large text-muted" >
-                Tools <br/>
-                Scripting <br/>
-                Gameplay <br/>
-                SSO <br/>
-                User Interface <br/>
-                Machine Learning <br/>
-                Natural Language Processing<br/>
-              </p>
-          </div>
-        </div>
-      </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section class="page-section" id="contact">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading text-uppercase">Contact Me</h2>
-          <h3 class="section-subheading text-muted"">See anything that peeks your interest? Contact me; I'd love to hear from you!</h3>
-          <div class="row">
-            <div class="col">
-              <img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCAyOTkuOTk3IDI5OS45OTciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDI5OS45OTcgMjk5Ljk5NzsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSIzMnB4IiBoZWlnaHQ9IjMycHgiPgo8Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0xNDkuOTk2LDBDNjcuMTU3LDAsMC4wMDEsNjcuMTU4LDAuMDAxLDE0OS45OTdjMCw4Mi44MzcsNjcuMTU2LDE1MCwxNDkuOTk1LDE1MHMxNTAtNjcuMTYzLDE1MC0xNTAgICAgQzI5OS45OTYsNjcuMTU4LDIzMi44MzUsMCwxNDkuOTk2LDB6IE0xNDUuMjk0LDEwMC4xNTloMTExLjg2NGMwLjc2MywwLDEuNTAyLDAuMDkxLDIuMjI1LDAuMjIzbC02Mi42NDgsMzYuMDE3bC01Mi45NjQtMzYuMDg3ICAgIEMxNDQuMjc1LDEwMC4yNSwxNDQuNzcsMTAwLjE1OSwxNDUuMjk0LDEwMC4xNTl6IE02MC41NzIsMTg1LjMxdi0xNS41NThoNDkuOTIxbC0wLjYwOSw1LjA0N2wtMC4xMTIsMC45MzF2MC45MzYgICAgYzAsMy4wMTksMC41MDEsNS45MjEsMS4zOTgsOC42NDRINjAuNTcyeiBNMTEyLjI5MywxNTQuODQyaC02OC41OFYxMzkuMjhoNzAuNDY1TDExMi4yOTMsMTU0Ljg0MnogTTExNy41NzEsMTExLjIxOGwtMC45NjUsNy45NjUgICAgSDI4LjU4NXYtMTUuNTYyaDkwLjM4NEMxMTguMTcsMTA2LjAyOCwxMTcuNjc3LDEwOC41NzMsMTE3LjU3MSwxMTEuMjE4eiBNMjQ5LjM3NSwxODguODUySDEzNy41MTMgICAgYy0zLjM0OCwwLTYuMzc4LTEuMzUxLTguNTgtMy41MzhjMCwwLDAsMCwwLTAuMDAzYy0wLjUzOS0wLjUzNy0xLjAyNy0xLjEyOC0xLjQ2LTEuNzU4Yy0wLjAxLTAuMDE2LTAuMDI5LTAuMDMxLTAuMDM5LTAuMDQ3ICAgIGMtMC40MDItMC41OTQtMC43MzctMS4yMzItMS4wMzItMS44OTFjLTAuMDI5LTAuMDY1LTAuMDczLTAuMTIyLTAuMTA0LTAuMTg5Yy0wLjI2NS0wLjYyMi0wLjQ1MS0xLjI4NC0wLjYwOS0xLjk1NiAgICBjLTAuMDI5LTAuMTE3LTAuMDgzLTAuMjIzLTAuMTA2LTAuMzRjLTAuMTYzLTAuNzk5LTAuMjQ5LTEuNjIxLTAuMjQ5LTIuNDY0bDQuMTQ1LTM0LjI1OWwwLjM3OS0zLjEzbDMuMjU4LTI2Ljk0ICAgIGMwLTAuNzcsMC4wOTMtMS41MTUsMC4yMzEtMi4yNDNjMC4wMTYtMC4wNzgsMC4wMDgtMC4xNjMsMC4wMjYtMC4yNDFjMC4wMSwwLjAwNSwwLjAxOCwwLjAxMywwLjAyOSwwLjAyMSAgICBjMC4zNS0xLjY2MiwxLjAxMi0zLjIwNiwxLjk1OC00LjU0N3Y1Ljg4bDU3Ljc0MSwzOS4xMzJjMC4wNzgsMC4wNTQsMC4xNjMsMC4wODMsMC4yNDQsMC4xM2MwLjA4MywwLjA1MiwwLjE2OSwwLjA5MywwLjI1NywwLjE0ICAgIGMwLjQ1NiwwLjIzMywwLjkyMywwLjQyLDEuNDAxLDAuNTQ1YzAuMDUyLDAuMDEzLDAuMDk5LDAuMDIxLDAuMTUsMC4wMzFjMC41MjQsMC4xMjQsMS4wNTYsMC4yLDEuNTgyLDAuMmgwLjAwNSAgICBjMC4wMDUsMCwwLjAwOCwwLDAuMDEsMGMwLjUyNywwLDEuMDU4LTAuMDc1LDEuNTgyLTAuMmMwLjA1Mi0wLjAxLDAuMDk5LTAuMDE4LDAuMTUtMC4wMzFjMC40NzctMC4xMjQsMC45NDQtMC4zMTEsMS40MDEtMC41NDUgICAgYzAuMDg2LTAuMDQ3LDAuMTcxLTAuMDg4LDAuMjU3LTAuMTRjMC4wOC0wLjA0NywwLjE2My0wLjA3NSwwLjI0NC0wLjEzbDY4Ljc5Mi0zOS43MTZjMC4wOCwwLjU2NSwwLjE3MSwxLjEyOCwwLjE3MSwxLjcxNyAgICBsLTcuNzgxLDY0LjMyOUMyNjEuNTU5LDE4My40LDI1Ni4xMDUsMTg4Ljg1MiwyNDkuMzc1LDE4OC44NTJ6IiBmaWxsPSIjRkZGRkZGIi8+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" 
-              align="top">
-              <a href="mailto:dianaqhuang@gmail.com" style="display: inline-block;">
-                <div class="team-member">
-                  <p class="large text-muted" style="margin-left: 15px; color: white;">
-                      dianaqhuang@gmail.com
-                  </p>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Creative - Start Bootstrap Theme</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- Third party plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Services</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contact</a></li>
+                    </ul>
                 </div>
-              </a>
             </div>
-          </div>
-          <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="https://www.linkedin.com/in/dianaqhuang/" target="_blank">
-                  <i class="fab fa-linkedin-in"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://github.com/dhuang19" target="_blank">
-                  <i class="fab fa-github"></i>
-                </a>
-              </li>
-            </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Other Projects Modals -->
-
-  <!-- Personal Portfolio Modal -->
-  <div class="portfolio-modal modal fade" id="portfoliootherModal1" tabindex="-1" role="dialog" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="close-modal" data-dismiss="modal">
-            <div class="lr">
-              <div class="rl"></div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-8 mx-auto">
-                <div class="modal-body">
-                  <!-- Project Details Go Here -->
-                  <h2 class="text-uppercase">Project Name</h2>
-                  <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                  <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
-                  <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                  <ul class="list-inline">
-                    <li>Date: January 2017</li>
-                    <li>Client: Threads</li>
-                    <li>Category: Illustration</li>
-                  </ul>
-                  <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fas fa-times"></i>
-                    Close Project</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  <!-- Blizzard Modal -->
-  <div class="portfolio-modal modal fade" id="portfolioModalBlizz" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Blizzard Entertainment</h2>
-                <p class="item-intro text-muted">Software Engineering Intern | June 2019 - Aug 2019</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/blizz.jpg" alt="">
-
-                <!-- Project Technical Details -->
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="team-member">
-                        <h5>
-                          LANGUAGES
-                        </h5>
-                        <p class="large text-muted">
-                          C# <br/>
-                          CSS/HTML/JS <br/>
-                        </p>
-                      </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-10 align-self-end">
+                        <h1 class="text-uppercase text-white font-weight-bold">Your Favorite Source of Free Bootstrap Themes</h1>
+                        <hr class="divider my-4" />
                     </div>
-                    <div class="col-md-6">
-                      <div class="team-member">
-                        <h5>
-                          FRAMEWORKS
-                        </h5>
-                        <p class="large text-muted">
-                          ASP.NET CORE MVC <br/>
-                          Razor Pages <br/>
-                          Okta SSO <br/>
-                        </p>
-                      </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 font-weight-light mb-5">Start Bootstrap can help you build better websites using the Bootstrap framework! Just download a theme and start customizing, no strings attached!</p>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
                     </div>
-                  </div>
                 </div>
-
-                <!-- Project Summary Text -->
-                <p>
-                  WIP
-                </p>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MM Modal -->
-  <div class="portfolio-modal modal fade" id="portfolioModalMM" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">MechMania 2018 & 2019</h2>
-                <p class="item-intro text-muted">Visualizer Team Lead | Oct 2017 - 2019</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/mm.jpg" alt="">
-                <!-- <iframe class="d-block mx-auto" width="900" height="auto" src="https://www.youtube.com/embed/HPcM6-hJGAw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-                <!-- Project Technical Details -->
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="team-member">
-                        <h5>
-                          LANGUAGES
-                        </h5>
-                        <p class="large text-muted">
-                          C# <br/>
-                          JSON <br/>
-                        </p>
-                      </div>
+        </header>
+        <!-- About-->
+        <section class="page-section bg-primary" id="about">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">We've got what you need!</h2>
+                        <hr class="divider light my-4" />
+                        <p class="text-white-50 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
+                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
                     </div>
-                    <div class="col-md-6">
-                      <div class="team-member">
-                        <h5>
-                          FRAMEWORKS
-                        </h5>
-                        <p class="large text-muted">
-                          Unity 3D
-                        </p>
-                      </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <h2 class="text-center mt-0">At Your Service</h2>
+                <hr class="divider my-4" />
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-gem text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Sturdy Themes</h3>
+                            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+                        </div>
                     </div>
-                  </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-laptop-code text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Up to Date</h3>
+                            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-globe text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Ready to Publish</h3>
+                            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <i class="fas fa-4x fa-heart text-primary mb-4"></i>
+                            <h3 class="h4 mb-2">Made with Love</h3>
+                            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+                        </div>
+                    </div>
                 </div>
-
-                <!-- Project Summary Text -->
-                <div class="description" style="margin-top: 50px;">
-                  <h4>
-                    OVERVIEW
-                  </h4>
-                  <p>
-                    Mechmania is a 24 hour AI hackathon held at the annual Reflections Projections conference at the University of Illinois at Urbana-Champaign. <br/><br/>
-                    I am a developer of the hackathon.
-                    My teammates and I were responsible for receiving streams of game data and visualizing the data in Unity3D.
-                    During MM 2018, I implemented a custom JSON parser to bridge the gap between the game engine team and the visualizer team, 
-                    created a map generator for play testing, implemented the dynamic camera movement, designed the final map, and implemented some UI elements.
-                  </p>
+            </div>
+        </section>
+        <!-- Portfolio-->
+        <section id="portfolio">
+            <div class="container-fluid p-0">
+                <div class="row no-gutters">
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/1.jpg"
+                            ><img class="img-fluid" src="assets/img/portfolio/thumbnails/1.jpg" alt="" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div></a
+                        >
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/2.jpg"
+                            ><img class="img-fluid" src="assets/img/portfolio/thumbnails/2.jpg" alt="" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div></a
+                        >
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/3.jpg"
+                            ><img class="img-fluid" src="assets/img/portfolio/thumbnails/3.jpg" alt="" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div></a
+                        >
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/4.jpg"
+                            ><img class="img-fluid" src="assets/img/portfolio/thumbnails/4.jpg" alt="" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div></a
+                        >
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/5.jpg"
+                            ><img class="img-fluid" src="assets/img/portfolio/thumbnails/5.jpg" alt="" />
+                            <div class="portfolio-box-caption">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div></a
+                        >
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <a class="portfolio-box" href="assets/img/portfolio/fullsize/6.jpg"
+                            ><img class="img-fluid" src="assets/img/portfolio/thumbnails/6.jpg" alt="" />
+                            <div class="portfolio-box-caption p-3">
+                                <div class="project-category text-white-50">Category</div>
+                                <div class="project-name">Project Name</div>
+                            </div></a
+                        >
+                    </div>
                 </div>
-
-                <!-- Project Teamwork Text -->
-                <div class="description">
-                  <h4>
-                    TEAMWORK
-                  </h4>
-                  <p>
-                    The team consisted on 10 undergraduate students at the University of Illinois at Urbana-Champaign.
-                    We were divided into the visualizer team, game engine team (whose job was to run the game logic and output game logs), and the infrastructure team. <br><br>
-                    One of the challenges we faced was the presence of dependencies in our complex workflow. 
-                    For instance, I could not finalize my JSON parser if the game engine team did not finalize the structure of their game logs. 
-                    And members of the visualizer team could not begin their work until the JSON parser was finished.
-                    I clearly communicated task dependancies which prevented my teammembers from becoming blocked. 
-                    Overall, we worked cohesively as a group and proudly presented a great MechMania tournament. I am excited to work with the team again for MechMania 2019.
-                  </p>
+            </div>
+        </section>
+        <!-- Call to action-->
+        <section class="page-section bg-dark text-white">
+            <div class="container text-center">
+                <h2 class="mb-4">Free Download at Start Bootstrap!</h2>
+                <a class="btn btn-light btn-xl" href="https://startbootstrap.com/themes/creative/">Download Now!</a>
+            </div>
+        </section>
+        <!-- Contact-->
+        <section class="page-section" id="contact">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="mt-0">Let's Get In Touch!</h2>
+                        <hr class="divider my-4" />
+                        <p class="text-muted mb-5">Ready to start your next project with us? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+                    </div>
                 </div>
-
-                <!-- Technical Text-->
-                <div class="description">
-                  <h4>
-                    TECHNICAL WORK
-                  </h4>
-                  <p>
-                    The code I wrote for the visualizer challenged my ability to break down large tasks into bite-sized, easy to test modular units.
-                    For example, one of my tasks was to write a map generator that takes in graph data (coordinates of nodes, list of edges) and visualizes it within Unity.
-                    I split up my tasks into instantiating the nodes at the given positions, 
-                    calculating the Quaternion rotations of the respective edges with a bit of linear algebra, 
-                    resolving the lengths of the edges depending on how far away its respective nodes were,
-                    and refining the map so there is no unnatural looking merging of gameobjects.
-                    Doing so made debugging my code much easier and increased the readability of my code.<br><br>
-                    Working on the visualizer team requires a unique combination between technical ability and artistic instinct. 
-                    Because there were no artists on the team, collaborating with the team members to figure out the final look of the game was important. 
-                    I worked primarily on the final map design, which I made sure to polish with non-repetitive tiles and particle effects to make the world feel more alive.
-                  </p>
+                <div class="row">
+                    <div class="col-lg-4 ml-auto text-center mb-5 mb-lg-0">
+                        <i class="fas fa-phone fa-3x mb-3 text-muted"></i>
+                        <div>+1 (555) 123-4567</div>
+                    </div>
+                    <div class="col-lg-4 mr-auto text-center">
+                        <i class="fas fa-envelope fa-3x mb-3 text-muted"></i
+                        ><!-- Make sure to change the email address in BOTH the anchor text and the link target below!--><a class="d-block" href="mailto:contact@yourwebsite.com">contact@yourwebsite.com</a>
+                    </div>
                 </div>
-
-                <!--Statistics-->
-                <div class="description">
-                  <h4>
-                    STATISTICS
-                  </h4>
-                  <p>
-                    MechMania 2018 had many firsts with the use of a new client system, a language agnostic option for contestants, and live twitch streams of the matches. <br><br>
-                    While Mechmania was streaming, it was the top programming stream on twitch for its duration with a total of 585 viewers. <br><br>
-                    A total of 41 teams entered with 37 teams finishing the competition. <br><br>1382 bots were submitted and 43,011 total matches were played. 
-                    All resulting in a total number of ~9558 computed hours. <br><br>
-                    More information about the tournament and its history can be found here: https://en.wikipedia.org/wiki/MechMania
-                  </p>
-                </div>
-
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project
-                </button>
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bunnies Modal -->
-  <div class="portfolio-modal modal fade" id="portfolioModalVR" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/03-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Finish</li>
-                  <li>Category: Identity</li>
-                </ul>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Elysium Modal -->
-  <div class="portfolio-modal modal fade" id="portfolioModalEly" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/04-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Lines</li>
-                  <li>Category: Branding</li>
-                </ul>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Asteroids Modal   -->
-  <div class="portfolio-modal modal fade" id="portfolioModalAsteroids" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/05-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Southwest</li>
-                  <li>Category: Website Design</li>
-                </ul>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal 6 -->
-  <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="close-modal" data-dismiss="modal">
-          <div class="lr">
-            <div class="rl"></div>
-          </div>
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-8 mx-auto">
-              <div class="modal-body">
-                <!-- Project Details Go Here -->
-                <h2 class="text-uppercase">Project Name</h2>
-                <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                <img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
-                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                <ul class="list-inline">
-                  <li>Date: January 2017</li>
-                  <li>Client: Window</li>
-                  <li>Category: Photography</li>
-                </ul>
-                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                  <i class="fas fa-times"></i>
-                  Close Project</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Contact form JavaScript -->
-  <script src="js/jqBootstrapValidation.js"></script>
-  <script src="js/contact_me.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/agency.min.js"></script>
-
-</body>
-
+        </section>
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Start Bootstrap</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
 </html>
