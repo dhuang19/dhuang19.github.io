@@ -476,8 +476,12 @@ mark,
 }
 
 .img-fluid {
-  max-width: 100%;
-  height: auto;
+  /* max-width: 100%;
+  height: auto; */
+  background-color: transparent;
+  height: 440px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .img-thumbnail {
@@ -9980,7 +9984,7 @@ hr.light {
 }
 
 .page-section {
-  padding: 8rem 0;
+  padding: 5rem 0;
 }
 
 #mainNav {
