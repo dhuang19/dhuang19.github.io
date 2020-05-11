@@ -17,6 +17,10 @@
         <link href="../../css/styles.css" rel="stylesheet" />
         <!-- Custom font -->
         <link href="../../css/font.css" rel="stylesheet" />
+
+        <!-- MathJax -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </head>
     <body id="page-top">
         <!-- Navigation-->
@@ -36,8 +40,9 @@
             <div class="container">
                 <h2 class="text-left mt-0">Introduction to Machine Learning through Nearest Neighbors</h2>
                 <br>
-                <p class="text-muted mb-0">
+                <p class="mb-0">
                     From Tom Mitchell's Machine Learning, a computer program is utilizing machine learning if it learns from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E. 
+                    
                     <br><br>
                     Machine learning shows up everywhere: <br>
                     <ul>
@@ -47,8 +52,21 @@
                         <li>Go  (AlphaGo, Deepmind, 2016)</li>
                         <li>Autonomous Driving (Uber, Audi, NVIDIA...)</li>
                     </ul>
-                    <br>
                     
+                    <br>
+                    Some notation is defined here: <br>
+                    $$x^i &rarr; Model &rarr; y^i$$
+                    $$D = {(x^i, y^i)}^N_{i=1}$$
+                    \(D\) is the dataset with \(N\) entries, each with an input \(x^i\) and output \(y^i\)
+
+                    <br><br>
+                    ML algorithms are usually characterized according to:
+                    <ul>
+                        <li>Available annotated data (supervised vs unsupervised)</li>
+                        <li>Complexity of model (linear vs non-linear)</li>
+                        <li>Structure of output (independent vs structured)</li>
+                        <li>Modeling of data (generative vs discriminative)</li>
+                    </ul>
                 </p>
             </div>
         </section>
