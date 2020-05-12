@@ -63,10 +63,42 @@
                     ML algorithms are usually characterized according to:
                     <ul>
                         <li>Available annotated data (supervised vs unsupervised)</li>
+                        <ul>
+                            <li>Supervised problems have inputs and labels. The model's task is to predict the label from new inputs.</li>
+                            <li>Unsupervised problems do not have labels. The model's task is to find structure in the data.</li>
+                        </ul>
                         <li>Complexity of model (linear vs non-linear)</li>
                         <li>Structure of output (independent vs structured)</li>
                         <li>Modeling of data (generative vs discriminative)</li>
                     </ul>
+
+                    <br><br>
+                    The Nearest Neighbor algorithm is a good introductory model to begin discussion on how to evaluate the strengths and weaknesses of models.
+                    NN assumes that similar things exist in close proximity to each other.
+                    <br><br>
+                    <img src="../assets/ml1-nn.PNG" alt="Nearest Neighbor Example">
+                    <br><br>
+                    We are given a set of \(N\) points in 2-D space: \(D = {(x^i, y^i)}^N_{i=1}\) where each point is labeled red or blue.
+                    If we add a point, it will have the same label as the point closest to it.
+                    How do we choose \(y\), the label of the newly added point, \(x\)?
+
+                    $$y = \underset{i \in [1, N]}{\operatorname{argmin}}||x^i - x||^2_2$$
+                    $$ = \underset{i \in [1, N]}{\operatorname{argmin}}d(x^i, x)$$
+
+                    The distance function \(d(x^i, x)\) in this example is set to the Euclidean distance / L2 Norm function.
+                    The distance function chosen should be the one that best describes the data and the nature of its clustering.
+
+                    <br><br>
+                    There are several good features about this model.
+                    A main one is that it can be applied to non-binary classification problems since the label to be predicted only depends on the distance between points.
+                    The actual label does not matter in the prediction algorithm.
+                    Also, as the number of samples increase, this model converges to the best possible classifier, though the conversion is worse in high data dimensions since distance behaves oddly in higher dimensional space. <a target="_blank" href="https://bib.dbvis.de/uploadedFiles/155.pdf">&#185;</a>
+
+                    <br><br>
+                    A shortcoming of this model is that it is susceptible to noisy data, as can be seen in the figure above, where there are stray bits of blue labels in the predominantly red area.
+                    There are also high computational costs. Assume that \(x \in \mathbb{R}^d\), there are \(n\) inputs, and the Euclidean distance function is used. 
+                    The naive memory used is \(O(nd)\) to store all \(n\) inputs of \(d\) dimension. The naive runtime is \(O(nd)\); \(O(d)\) to compute distances for each \(n\) inputs.
+
                 </p>
             </div>
         </section>
