@@ -1,0 +1,42 @@
+@import "compass/css3";
+
+.stylized-list-div{
+  width: 50%;
+}
+
+.stylized-list-div h2 {
+  margin: 0;
+  padding: 0;
+}
+
+.stylized-list-div ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stylized-list-div li {
+  font: 200 20px/1.5;
+  border-bottom: 1px solid #ccc;
+}
+
+.stylized-list-div li:last-child {
+  border: none;
+}
+
+.stylized-list-div li a {
+  text-decoration: none;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+  display: block;
+  width: auto;
+}
+
+.stylized-list-div li a:hover {
+  font-size: 17px;
+  background: #f6f6f600;
+}

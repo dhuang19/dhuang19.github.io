@@ -30,7 +30,7 @@
   --info: #17a2b8;
   --warning: #ffc107;
   --danger: #dc3545;
-  --light: #f8f9fa;
+  --light: #222831;
   --dark: #343a40;
   --breakpoint-xs: 0;
   --breakpoint-sm: 576px;
@@ -4292,10 +4292,10 @@ input[type=button].btn-block {
 }
 
 .navbar-dark .navbar-brand {
-  color: #fff;
+  color: #222831;
 }
 .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
-  color: #fff;
+  color: #222831;
 }
 .navbar-dark .navbar-nav .nav-link {
   color: rgba(255, 255, 255, 0.5);
@@ -4310,7 +4310,7 @@ input[type=button].btn-block {
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .nav-link.show,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #fff;
+  color: #222831;
 }
 .navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 0.5);
@@ -4323,10 +4323,10 @@ input[type=button].btn-block {
   color: rgba(255, 255, 255, 0.5);
 }
 .navbar-dark .navbar-text a {
-  color: #fff;
+  color: #222831;
 }
 .navbar-dark .navbar-text a:hover, .navbar-dark .navbar-text a:focus {
-  color: #fff;
+  color: #222831;
 }
 
 .card {
@@ -6139,7 +6139,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #343a40 !important;
+  background-color: #26282b !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -7466,6 +7466,7 @@ button.bg-dark:focus {
 .mt-0,
 .my-0 {
   margin-top: 0 !important;
+  color: #eeeeee;
 }
 
 .mr-0,
@@ -7476,6 +7477,7 @@ button.bg-dark:focus {
 .mb-0,
 .my-0 {
   margin-bottom: 0 !important;
+  color: #e4e4e4;
 }
 
 .ml-0,
@@ -7524,6 +7526,7 @@ button.bg-dark:focus {
 .mb-2,
 .my-2 {
   margin-bottom: 0.5rem !important;
+  color: #eeeeee;
 }
 
 .ml-2,
@@ -9818,7 +9821,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-muted {
-  color: #6c757d !important;
+  color: #e4e4e4c7 !important;
 }
 
 .text-black-50 {
@@ -9983,17 +9986,18 @@ hr.light {
 
 .page-section {
   padding: 5rem 0;
+  background-color: #313131;
 }
 
 #mainNav {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-  background-color: #fff;
+  background-color: #26282b;
   transition: background-color 0.2s ease;
 }
 #mainNav .navbar-brand {
   font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
-  color: #212529;
+  color: #eeeeee;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   color: #6c757d;
@@ -10024,23 +10028,23 @@ hr.light {
     padding: 0 1rem;
   }
   #mainNav .navbar-nav .nav-item .nav-link:hover {
-    color: #fff;
+    color: #eeeeee;
   }
   #mainNav .navbar-nav .nav-item:last-child .nav-link {
     padding-right: 0;
   }
   #mainNav.navbar-scrolled {
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    background-color: #fff;
+    background-color: #26282b;
   }
   #mainNav.navbar-scrolled .navbar-brand {
-    color: #212529;
+    color: #eeeeee;
   }
   #mainNav.navbar-scrolled .navbar-brand:hover {
     color: #f4623a;
   }
   #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link {
-    color: #212529;
+    color: #eeeeee;
   }
   #mainNav.navbar-scrolled .navbar-nav .nav-item .nav-link:hover {
     color: #f4623a;
