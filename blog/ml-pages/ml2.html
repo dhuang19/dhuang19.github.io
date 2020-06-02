@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Creative - Start Bootstrap Theme</title>
+        <title>Diana Huang - Machine Learning</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -57,13 +57,28 @@
                     $$\frac{1}{N}\sum_{i=1}^N\frac{1}{2}(\hat{y}^i-y^i)^2$$
                     $$=\frac{1}{N}\sum_{i=1}^N\frac{1}{2}(w_1^Tx + w_2-y^i)^2$$
                     At this point in the lecture, I was wondering why we had the \(\frac{1}{2}\) term in the summation since without it, it's the average of squared error which makes sense as a loss function.
-                    Later on the the lecture, we do some derivations on this function where a 2 term pops out. The \(\frac{1}{2}\) is there to benefit our future selves. It also does not affect the loss function since it's a scalar term.
+                    Later in the lecture, we do some derivations on this function where a 2 term pops out. The \(\frac{1}{2}\) is there to benefit our future selves. It also does not affect the loss function since it's a scalar term.
 
                     <br><br>
                     We want to pick \(w_1\) and \(w_2\) such that the squared loss function is minimized:
                     $$\underset{w_1 \in \mathbb{R}^d, w_2 \in \mathbb{R}}{\operatorname{argmin}}\frac{1}{N}\sum_{i=1}^N\frac{1}{2}(w_1^Tx + w_2-y^i)^2$$
                     If we convert the squared loss function from a scalar error problem to a matrix problem, the math is cleaner:
-                    $$ Let y:=\begin{bmatrix}y$$
+                    $$Y:=\begin{bmatrix}y^1\\.\\.\\y^N\end{bmatrix}\in \mathbb{R}^N \qquad W := \begin{bmatrix}w_{1, 1}\\.\\.\\w_{1,d}\\w_2\end{bmatrix}\in \mathbb{R}^{d+1} \qquad X:= \begin{bmatrix}\cdots & x_1 & \cdots & 1\\ & \vdots & & \vdots\\ \cdots & x_N & \cdots & 1\end{bmatrix}\in \mathbb{R}^{N\times(d+1)}$$
+                    $$\underset{W \in \mathbb{R}^{d+1}}{\operatorname{argmin}}\frac{1}{N}||XW-Y||^2_2$$
+                    By tacking on the column full of 1's in \(X\), we are able to account for the bias term \(w_2\) in a more compact way. In order to find the value of \(W\) that minimizes the new matrix error, we can use the gradient of W and set it to 0:
+
+                    $$\frac{\partial \frac{1}{2}||XW-Y||^2_2}{\partial W} = 0$$
+                    $$\frac{\partial}{\partial W} \frac{1}{2} [W^TX^TXW - 2Y^TXW + Y^TY] = 0$$
+                    $$\frac{1}{2}[2X^TXW - 2Y^TX] = 0$$
+                    $$X^TXW - Y^TX = 0$$
+                    $$X^TXW = X^TY$$
+                    $$\hat{W} = (X^TX)^{-1}X^TY$$
+                    So \(\hat{W}\) is the ordinary least squares (OLS) estimator. So \(X^TX\hat{W} = X^TY\) is the derivative condition that \(\hat{W}\) satisfies when it exists.
+
+                    <br><br>
+                    In this lecture we assume that \(\underset{W \in \mathbb{R}^{d+1}}{\operatorname{argmin}}\frac{1}{N}||XW-Y||^2_2\) is convex as we will go into greater detail in the optimization lectures. Because it is convex, we know there is only one minimizer.
+                    One weak point of this estimator is that \((X^TX)^{-1}\) must be solvable, so \(X^TX\) must be invertible. However, \(X^TX\) is sometimes badly conditioned and we must use inverse approximations like pseudo-inverse to evaluate \(X^TX\).
+                    We could also use ridge regression and add a regularization term: \(\underset{W \in \mathbb{R}^{d+1}}{\operatorname{argmin}}\frac{1}{N}||XW-Y||^2_2 + \frac{\lambda}{2}||W||^2\), giving \(\hat{W} := (X^TX + \lambda I)^{-1}X^TY\)
                 </p>
             </div>
         </section>
