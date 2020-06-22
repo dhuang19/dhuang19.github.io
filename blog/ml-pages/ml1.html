@@ -41,20 +41,24 @@
                 <h2 class="text-left mt-0">Introduction to Machine Learning through Nearest Neighbors</h2>
                 <br>
                 <p class="mb-0">
-                    From Tom Mitchell's Machine Learning, a computer program is utilizing machine learning if it learns from experience E with respect to some class of tasks T and performance measure P if its performance at tasks in T, as measured by P, improves with experience E. 
-                    
+                    With the increase in big data production, machine learning has popped up everywhere to detect patterns and predict outcomes.
+
                     <br><br>
-                    Machine learning shows up everywhere: <br>
+                    Machine learning has shown up in: <br>
                     <ul>
                         <li>Chess Play (Deep Blue, IBM, 1997)</li>
                         <li>Jeopardy (Watson, IBM, 2011)</li>
                         <li>Atari games (DQN, Deepmind, 2015)</li>
                         <li>Go  (AlphaGo, Deepmind, 2016)</li>
+                        <li>StarCraft (Deepmind, 2019)</li>
                         <li>Autonomous Driving (Uber, Audi, NVIDIA...)</li>
                     </ul>
+
+                    From Tom Mitchell's Machine Learning, a computer program is utilizing machine learning if it learns from experience E with respect to some class of tasks T and performance measure P
+                     if its performance at tasks in T, as measured by P, improves with experience E. In other words, if a program is able to better perform a set of tasks after having received some experience in those tasks.
                     
-                    <br>
-                    Some notation is defined here: <br>
+                    <br><br>
+                    Some standard notation is defined here: <br>
                     $$x^i &rarr; Model &rarr; y^i$$
                     $$D = {(x^i, y^i)}^N_{i=1}$$
                     \(D\) is the dataset with \(N\) entries, each with an input \(x^i\) and output \(y^i\)
@@ -65,12 +69,15 @@
                         <li>Available annotated data (supervised vs unsupervised)</li>
                         <ul>
                             <li>Supervised problems have inputs and labels. The model's task is to predict the label from new inputs.</li>
-                            <li>Unsupervised problems do not have labels. The model's task is to find structure in the data.</li>
+                            <li>Unsupervised problems do not have labels. The model's task is to find structure and patterns in the data.</li>
                         </ul>
-                        <li>Complexity of model (linear vs non-linear)</li>
+                        <li>Complexity of model (is the model linear or non-linear)</li>
                         <li>Structure of output (independent vs structured)</li>
                         <li>Modeling of data (generative vs discriminative)</li>
                     </ul>
+
+                    <img src="../assets/ml1-supervisedmeme.jpg" style="width: 300px; height: auto; display: block; margin: auto;">
+                    
 
                     <br><br>
                     The Nearest Neighbor algorithm is a good introductory model to begin discussion on how to evaluate the strengths and weaknesses of models.
@@ -99,6 +106,9 @@
                     There are also high computational costs. Assume that \(x \in \mathbb{R}^d\), there are \(n\) inputs, and the Euclidean distance function is used. 
                     The naive memory used is \(O(nd)\) to store all \(n\) inputs of \(d\) dimension. The naive runtime is \(O(nd)\); \(O(d)\) to compute distances for each \(n\) inputs.
 
+                    <br><br>
+                    So where is NN actually used? One example is in credit ratings. By the nature of a credit rating, people with similar financial information would have similar credit ratings.
+                    
                 </p>
             </div>
         </section>
