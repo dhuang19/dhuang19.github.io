@@ -78,7 +78,9 @@
                     <br><br>
                     In this lecture we assume that \(\underset{W \in \mathbb{R}^{d+1}}{\operatorname{argmin}}\frac{1}{N}||XW-Y||^2_2\) is convex as we will go into greater detail in the optimization lectures. Because it is convex, we know there is only one minimizer.
                     One weak point of this estimator is that \((X^TX)^{-1}\) must be solvable, so \(X^TX\) must be invertible. However, \(X^TX\) is sometimes badly conditioned and we must use inverse approximations like pseudo-inverse to evaluate \(X^TX\).
-                    We could also use ridge regression and add a regularization term: \(\underset{W \in \mathbb{R}^{d+1}}{\operatorname{argmin}}\frac{1}{N}||XW-Y||^2_2 + \frac{\lambda}{2}||W||^2\), giving \(\hat{W} := (X^TX + \lambda I)^{-1}X^TY\)
+                    We could also use ridge regression and add a regularization term: 
+                    $$\underset{W \in \mathbb{R}^{d+1}}{\operatorname{argmin}}\frac{1}{N}||XW-Y||^2_2 + \frac{\lambda}{2}||W||^2$$
+                    $$\hat{W} := (X^TX + \lambda I)^{-1}X^TY$$
                 </p>
             </div>
         </section>
