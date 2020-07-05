@@ -41,14 +41,14 @@
                 <h2 class="text-left mt-0">Feature Construction & Logistic Regression</h2>
                 <br>
                 <p class="mb-0">
-                    Feature Construction
+                    <b>Feature Construction</b>
                     <br><br>
                     Selecting good features is often key to the performance of a machine learning algorithm. 
                     To explain through a real world application (
                         <a target="_blank" href="https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/papers/mfm-pami-boundary.pdf">Martin et al.. 2019 Learning to Detect Natural Image Boundaries</a>
                         ), consider the task of boundary detection in images where we want to define object boundaries.
                     <br><br>
-                    <img src="../assets/ml3-outline.PNG" alt="Outlines" style="display: block; margin: auto;">
+                    <img src="../assets/ml3-outline.PNG" alt="Outlines" style="display: block; margin: auto; width: 900px;">
                     <p style="text-align: center;">Figure 1. Human-marked segment boundaries</p>
                     <br>
                     Let \(y = \{+1, -1\}\) since we want to label each pixel as non-boundary (+1) or boundary (-1).
@@ -60,10 +60,31 @@
                     $$\phi(x^i) = \{features\}$$
                     \(\phi(x^i)\) is a vector of features computed in the neighborhood of pixel \(i\), e.g. intensity, texture gradient, oriented gradient, etc..
                     <br><br>
-                    <img src="../assets/ml3-features.PNG" alt="Features" style="display: block; margin: auto;">
+                    <img src="../assets/ml3-features.PNG" alt="Features" style="display: block; margin: auto; width: 900px;">
                     <p style="text-align: center;">Figure 2. Boundaries produced by various gradient detectors</p>
                     <br>
                     In the research paper, they used brightness gradient (BG), color gradient (CG), and texture gradient (TG) as their feature transformations. As can be seen from Figure 2, the boundaries were best detected when using all the 3 cues.
+                    <br><br>
+                    <b>Using the Wrong Model</b>
+                    <br><br>
+                    We can easily show how important it is to pick the right algorithm for the task with a simple example. Consider the target labels \(y^i \in \{-1, 1\}\). 
+                    <br><br>
+                    We want to classify the all input \(x\) points as either -1 or +1 with the 1-D model: \(y^i = sign(w_1x^i + w_0)\).
+                    <br><br>
+                    <img src="../assets/ml3-incorrectModel.PNG" alt="Wrong Model" style="display: block; margin: auto; width: 900px;">
+                    <p style="text-align: center;">Figure 3. Regression model incorrectly predicting classification task</p>
+                    <br>
+                    Consider the example on the left of Figure 3. We want to separate the purple section and the blue section by marking purple as -1 and blue as +1. It's easy to see that the gray line would perfectly classify the sections.
+                    The sign function would be the gray step function drawn on the graph. 
+                    Keep in mind from <a href="dhuang19.github.io/blog/ml-pages/ml2.html">Lecture 2 - Linear Regression</a>, that the linear regression algorithm is measured by the squared loss function. 
+                    So the algorithm will attempt to predict the boundary that minimizes the average squared error i.e. the distance between the highlighted regions and the line itself. 
+                    <br><br>
+                    The example of the right of Figure 3 shows how past the simple first example, linear regression will fail for this simple classification problem. 
+                    In this example, the dotted gray line is the boundary that would have perfectly classified the purple and blue sections. However, the solid gray line is the boundary that is actually picked by linear regression. 
+                    As we can see, it misclassifies a small segment of the first blue section as -1 instead of +1. 
+                    This is because of the algorithm is attempting to find the minimum squared error between the inputs and the predicted line (as seen in the green arrows) and is shifted to the right because of the additional blue section to the right.
+                    <br><br>
+                    The task that we are applying linear regression to is not the task that it was designed for.
                 </p>
             </div>
         </section>
