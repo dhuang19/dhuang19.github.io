@@ -45,10 +45,10 @@
                     <br><br>
                     Selecting good features is often key to the performance of a machine learning algorithm. 
                     To explain through a real world application (
-                        <a target="_blank" href="https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/papers/mfm-pami-boundary.pdf">Martin et al.. 2019 Learning to Detect Natural Image Boundaries</a>
-                        ), consider the task of boundary detection in images where we want to define object boundaries.
+                        <a target="_blank" href="https://www2.eecs.berkeley.edu/Research/Projects/CS/vision/grouping/papers/mfm-pami-boundary.pdf">Martin et al.. 2019 Learning to Detect Natural Image Boundaries</a>), 
+                        consider the task of boundary detection in images where we want to define object boundaries.
                     <br><br>
-                    <img src="../assets/ml3-outline.PNG" alt="Outlines" style="display: block; margin: auto; width: 900px;">
+                    <img src="../assets/ml3/ml3-outline.PNG" alt="Outlines" style="display: block; margin: auto; width: 900px;">
                     <p style="text-align: center;">Figure 1. Human-marked segment boundaries</p>
                     <br>
                     Let \(y = \{+1, -1\}\) since we want to label each pixel as non-boundary (+1) or boundary (-1).
@@ -60,20 +60,21 @@
                     $$\phi(x^i) = \{features\}$$
                     \(\phi(x^i)\) is a vector of features computed in the neighborhood of pixel \(i\), e.g. intensity, texture gradient, oriented gradient, etc..
                     <br><br>
-                    <img src="../assets/ml3-features.PNG" alt="Features" style="display: block; margin: auto; width: 900px;">
+                    <img src="../assets/ml3/ml3-features.PNG" alt="Features" style="display: block; margin: auto; width: 900px;">
                     <p style="text-align: center;">Figure 2. Boundaries produced by various gradient detectors</p>
-                    <br>
+
                     In the research paper, they used brightness gradient (BG), color gradient (CG), and texture gradient (TG) as their feature transformations. As can be seen from Figure 2, the boundaries were best detected when using all the 3 cues.
                     <br><br>
+
                     <b>Using the Wrong Model</b>
                     <br><br>
                     We can easily show how important it is to pick the right algorithm for the task with a simple example. Consider the target labels \(y^i \in \{-1, 1\}\). 
                     <br><br>
                     We want to classify the all input \(x\) points as either -1 or +1 with the 1-D model: \(y^i = sign(w_1x^i + w_0)\).
                     <br><br>
-                    <img src="../assets/ml3-incorrectModel.PNG" alt="Wrong Model" style="display: block; margin: auto; width: 900px;">
+                    <img src="../assets/ml3/ml3-incorrectModel.PNG" alt="Wrong Model" style="display: block; margin: auto; width: 900px;">
                     <p style="text-align: center;">Figure 3. Regression model incorrectly predicting classification task</p>
-                    <br>
+
                     Consider the example on the left of Figure 3. We want to separate the purple section and the blue section by marking purple as -1 and blue as +1. It's easy to see that the gray line would perfectly classify the sections.
                     The sign function would be the gray step function drawn on the graph. 
                     Keep in mind from <a href="dhuang19.github.io/blog/ml-pages/ml2.html">Lecture 2 - Linear Regression</a>, that the linear regression algorithm is measured by the squared loss function. 
@@ -85,6 +86,42 @@
                     This is because of the algorithm is attempting to find the minimum squared error between the inputs and the predicted line (as seen in the green arrows) and is shifted to the right because of the additional blue section to the right.
                     <br><br>
                     The task that we are applying linear regression to is not the task that it was designed for.
+                    <br><br>
+
+                    <b>Logistic Regression</b>
+                    <br><br>
+                    Logistic Regression is a probabilistic formulation for classification that uses the Bernoulli Random Variable distribution. This allows us to model the probability of 2 options:
+                    $$\theta(x) \in [0,1]$$
+                    $$P(y=1) = \theta(x)$$
+                    $$P(y=-1) = 1 - \theta(x)$$
+                    The probability that \(y=1\) is \(\theta(x)\), a real number between and including 0 and 1. Since there are only 2 outcomes, \(P(y=-1)\) is simply 1 minus that.
+                    Now if we apply a linear transformation, we get \(w^T\phi(x) \in \mathbb{R}\). However, we want this value to remain something between 0 and 1, so we can apply the sigmoid function to this:
+                    <br><br>
+                    <img src="../assets/ml3/ml3-sigmoid.PNG" alt="Sigmoid" style="display: block; margin: auto; width: 900px;">
+                    <p style="text-align: center;">Eq 1. Applying Sigmoid to Linear Transformation</p>
+                    Now that we have a probability function for a linearly transformed input, how do we go about selecting the \(w\) that will maximize the probability of dataset \(D = \{(x^i, y^i)\} \)? <br>
+                    When deriving the task of selecting the model parameter, we will assume that all samples in \(D\) are iid (independent & identically distributed). 
+                    Because of the assumption, we can state that \(P(D)\) is just the product of all samples in the dataset.
+                    <br><br>
+                    <img src="../assets/ml3/ml3-derivation.PNG" alt="Derivation" style="display: block; margin: auto; width: 900px;">
+                    <p style="text-align: center;">Eq 2. Model Parameter Selection Task Derivation</p>
+
+                    <br><br>
+
+                    <b>Least Squares Linear Regression vs. Logistic Regression</b>
+                    <br><br>
+                    We can compare the the minimizers of both models:
+                    <br><br>
+                    <img src="../assets/ml3/ml3-comparison.PNG" alt="Comparison" style="display: block; margin: auto; width: 900px;">
+                    <p style="text-align: center;">Eq 3. Linear Regression vs. Logistic Regression</p>
+                    We can see a unified view through the Emperical Risk Minimization equation (ERM), which we often use to solve ML problems. It is essentially minimizing some average loss function over the data.
+                    For least squares linear regression, that loss function is \(\frac{1}{2}(1 - something)^2\) and for logistic regression, it is \(log(1+e^{something})\). 
+                    <br>
+                    We can see the ramifications of this in this graph:
+                    <br><br>
+                    <img src="../assets/ml3/comparison_graph.PNG" alt="Comparison Graph" style="display: block; margin: auto; width: 900px;">
+                    <p style="text-align: center;">Figure 3. Square Loss vs Logistic Loss</p>
+                    For squared (quadratic) loss, if the score is too large (too correct), the model will penalize it for being too confident in the prediction. For log (logistic) loss however, it is much better behaved as the loss decreases as it becomes more correct.
                 </p>
             </div>
         </section>
