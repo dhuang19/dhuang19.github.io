@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Diana Huang - Machine Learning</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="../assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="../../css/styles.css" rel="stylesheet" />
+        <!-- Custom font -->
+        <link href="../../css/font.css" rel="stylesheet" />
+
+        <!-- MathJax -->
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top">DH</a><button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../index.html">Blog</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="../../index.html">Portfolio</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Welcome -->
+        <section class="page-section text-white" id="article">
+            <div class="container">
+                <h2 class="text-left mt-0">Optimization Part 1</h2>
+                <br>
+                <p class="mb-0">
+                    <b>Optimizing w for logistic regression</b>
+                    <br><br>
+                    Recall the minimizer of the logistic regression algorithm:
+                    <br><br>
+
+                    <img src="../assets/ml4/logregression.PNG" alt="LogRegress" style="display: block; margin: auto; width: 600px;">
+                    <p style="text-align: center;">Eq 1. Logistic Regression Minimizer</p>
+                    <br>
+
+                    We know that for a convex problem, we have hit a minimizer if the gradient is 0. 
+                    We can use gradient descent to iteratively find smaller and smaller gradients till we get as close to 0 as possible, providing a relatively optimal minimizer. 
+                    Many ML optimization problems are solved with a variant of gradient descent.
+                    <br><br>
+
+                    <img src="../assets/ml4/logregression_gradient.PNG" alt="LogRegressGradient" style="display: block; margin: auto; width: 600px;">
+                    <p style="text-align: center;">Eq 2. Logistic Regression Minimizer Gradient</p>
+                    <br>
+
+                    Pseudocode:
+                    <ol>
+                        <li>Initialize t=0, \(w_t\), and stepsize \(\alpha\)</li>
+                        <li>Compute gradient \(g_t = \nabla_w f(w_t) \)</li>
+                        <li>Update parameters \(w_{t+1} \leftarrow w_t - \alpha g_t \)</li>
+                        <li>Update \(t \leftarrow t+1 \)</li>
+                    </ol> 
+
+                    Note that the stepsize parameter must be chosen carefully, as if it's too small, the algorithm will take too long to run. However, if it's too large, it will overshoot the minimizer.
+                    <br><br>
+                    Consider what happens if \(f(w)\) isn't convex, as in there are bumps in the function?
+                    <br><br>
+
+                    <img src="../assets/ml4/min_graph.PNG" alt="MinsGraph" style="display: block; margin: auto; width: 600px;">
+                    <p style="text-align: center;">Figure 1. Possible min points of \(f(w)\)</p>
+                    <br>
+
+                    Gradient descent will target all 3 of those points since the gradients at those points are all 0, when we only want to target the global minimizer.
+                    We will attempt to solve this problem through the rest of this lecture and the next one.
+
+                    <br><br>
+                    <b>Convex Sets</b>
+                    <br><br>
+
+                    A set is convex if it contains all line segments that can be formed by any 2 points within the set.
+                    <br><br>
+
+                    <img src="../assets/ml4/convexsets.PNG" alt="Convex Sets" style="display: block; margin: auto; width: 600px;">
+                    <p style="text-align: center;">Figure 2. Convex Set Example</p>
+                    <br>
+                    The set on the left is not convex because there exists 2 points in the set where the line between them is not inside the set. The set on the right is convex because all lines formed between any 2 points lie within the set.
+                    More formally, \(C \subseteq \mathbb{R}^d\) is convex when
+                    $$\{x,y\} \subseteq C \Rightarrow [x,y] \subseteq C$$
+                    $$[x,y] = \{\alpha x + (1-\alpha)y : \alpha \in [0,1]\}$$
+
+                    <br><br>
+                    <b>Convex Hull</b>
+                    <br><br>
+
+                    A convex hull is the smallest set that contains given data points.
+                    <br><br>
+
+                    <img src="../assets/ml4/convexhull.PNG" alt="Convex Hull" style="display: block; margin: auto; width: 600px;">
+                    <p style="text-align: center;">Figure 3. Convex Hull Example</p>
+                    <br>
+
+                    In the example above, the white points are the given points. And the convex hull is the set formed by the purple lines, as it a rubber band was put around the points.
+                    <br>
+                    For a non-infinite set \(S = (x_1, x_2, ... x_k)\), the convex hull is simply all convex combinations of the points. In other words, it's the intersection of all lines formed between all points in \(S\). More formally,
+                    $$conv(S) = \{ \sum_{i=1}^k \alpha_i x_i : \alpha_i \geq 0, \sum_{i=1}^k \alpha_i = 1 \}$$
+                </p>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="bg-dark py-5">
+            <div class="container"><div class="small text-center text-muted">Copyright © 2020 - Start Bootstrap</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="../../js/scripts.js"></script>
+    </body>
+</html>
