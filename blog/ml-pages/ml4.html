@@ -44,21 +44,15 @@
                     <b>Optimizing w for logistic regression</b>
                     <br><br>
                     Recall the minimizer of the logistic regression algorithm:
-                    <br><br>
-
-                    <img src="../assets/ml4/logregression.PNG" alt="LogRegress" style="display: block; margin: auto; width: 600px;">
-                    <p style="text-align: center;">Eq 1. Logistic Regression Minimizer</p>
-                    <br>
-
+                    $$
+                    \min_w \sum_{(x^i, y^i \in D)} log(1 + e^{-y^i w^T \phi (x^i)}) = f(w)
+                    $$
                     We know that for a convex problem, we have hit a minimizer if the gradient is 0. 
                     We can use gradient descent to iteratively find smaller and smaller gradients till we get as close to 0 as possible, providing a relatively optimal minimizer. 
-                    Many ML optimization problems are solved with a variant of gradient descent.
-                    <br><br>
-
-                    <img src="../assets/ml4/logregression_gradient.PNG" alt="LogRegressGradient" style="display: block; margin: auto; width: 600px;">
-                    <p style="text-align: center;">Eq 2. Logistic Regression Minimizer Gradient</p>
-                    <br>
-
+                    Many ML optimization problems are solved with a variant of gradient descent. The derived minimzer gradient is:
+                    $$
+                    \nabla_w f(w) = \sum_{(x^i, y^i) \in D} \frac{-y^i \phi(x^i) e^{-y^i w^T \phi(x^i)}}{1 + e^{-y^i w^T \phi(x^i)}}
+                    $$
                     Pseudocode:
                     <ol>
                         <li>Initialize t=0, \(w_t\), and stepsize \(\alpha\)</li>
@@ -82,7 +76,7 @@
                     <br><br>
                     <b>Convex Sets</b>
                     <br><br>
-
+                    Convex sets are useful for defining convex functions, which we need in order to deterine if gradient descent can be reliably used to find the minimizer of a loss function.
                     A set is convex if it contains all line segments that can be formed by any 2 points within the set.
                     <br><br>
 
@@ -109,6 +103,53 @@
                     <br>
                     For a non-infinite set \(S = (x_1, x_2, ... x_k)\), the convex hull is simply all convex combinations of the points. In other words, it's the intersection of all lines formed between all points in \(S\). More formally,
                     $$conv(S) = \{ \sum_{i=1}^k \alpha_i x_i : \alpha_i \geq 0, \sum_{i=1}^k \alpha_i = 1 \}$$
+
+                    <br><br>
+                    <b>Convex Function</b>
+                    <br><br>
+
+                    Recall from calculus the epigraph of a function. It is defined as a set of all the points and values of the function less than some line.
+                    $$
+                    epi(f) = \{(x,r) : x \in \mathbb{R}^d, r \in \mathbb{R}, f(x) \leq r\}
+                    $$ 
+                    The intuition is we can think of it as water filling the function where the set formed by the water is the set formed by the epigraph function as can be seen in Figure 4.
+
+                    We are able to formally define a convex function by a convex set. <br><br>
+                    Theorem: f is a convex function when epi(f) is a convex set.
+                     <br><br>
+
+                    <img src="" alt="Convex Function Waterfill" style="display: block; margin: auto; width: 600px;">
+                    <p style="text-align: center;">Figure 4. Convex Function Waterfill</p>
+                    <br>
+                    As we can see, the shaded area is epi(f) and the graph on the right is non-convex because epi(f) is non-convex.
+                    Alternatively, based on the epigraph theorem, we can algebraically define that for any \(x,y \in \mathbb{R}^d\) and \(\alpha \in [0,1]\), f is a convex function when...
+                    $$
+                    f(\alpha x + (1- \alpha)y) \leq \alpha (x) + (1-\alpha)f(y)
+                    $$
+                    In other words, f is a convex function if f of a linear combination of points is less than a convex combination of function values.
+                    <br><br>
+
+                    <img src="" alt="Convex Function Algebraic" style="display: block; margin: auto; width: 600px;">
+                    <p style="text-align: center;">Figure 5. Algebraic Form of Epigraph Theorem Visualized</p>
+                    <br>
+                    
+                    <br><br>
+                    <b>Convex Loss</b>
+                    <br><br>
+
+                    Convexity indicates that there are no bumps on the function, and therefore, gradient descent works to find the minimizer. To review squared and logistic loss:
+                    <br><br>
+
+                    <img src="../assets/ml3/comparison_graph.PNG" alt="Loss Functions" style="display: block; margin: auto; width: 600px;">
+                    <p style="text-align: center;">Figure 6. Squared loss vs logistic loss</p>
+                    <br>
+                    Informally, we can clearly see that both quadratic loss and log loss are convex (proven formally, they are!). We can also see that 0/1 loss is non-convex.
+                    What about the convexity of empirical risk?
+                    $$
+                    \frac{1}{N} \sum_{i=1}^N l(y^i w^T x^i)
+                    $$
+                    We want to see if loss is convex with respect to w, not with respect to \(y^i w^T x^i\).
+                    
                 </p>
             </div>
         </section>
