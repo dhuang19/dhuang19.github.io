@@ -118,7 +118,7 @@
                     Theorem: f is a convex function when epi(f) is a convex set.
                      <br><br>
 
-                    <img src="" alt="Convex Function Waterfill" style="display: block; margin: auto; width: 600px;">
+                    <img src="../assets/ml4/convex_waterfill.PNG" alt="Convex Function Waterfill" style="display: block; margin: auto; width: 600px;">
                     <p style="text-align: center;">Figure 4. Convex Function Waterfill</p>
                     <br>
                     As we can see, the shaded area is epi(f) and the graph on the right is non-convex because epi(f) is non-convex.
@@ -126,12 +126,12 @@
                     $$
                     f(\alpha x + (1- \alpha)y) \leq \alpha (x) + (1-\alpha)f(y)
                     $$
-                    In other words, f is a convex function if f of a linear combination of points is less than a convex combination of function values.
+                    In other words, f is a convex function if f of a linear combination of points is less than a convex combination of function values. In the figure below, we choose points \(x,y \in \mathbb{R}^d\). 
+                    In the left graph, we can see that the \(f(x)\) is always underneath the line formed by \(x\) and \(y\), meaning it is convex. In the right graph, the opposite is true, meaning it is non-convex.
                     <br><br>
 
-                    <img src="" alt="Convex Function Algebraic" style="display: block; margin: auto; width: 600px;">
+                    <img src="../assets/ml4/convex_function_visual.PNG" alt="Convex Function Algebraic" style="display: block; margin: auto; width: 600px;">
                     <p style="text-align: center;">Figure 5. Algebraic Form of Epigraph Theorem Visualized</p>
-                    <br>
                     
                     <br><br>
                     <b>Convex Loss</b>
@@ -144,11 +144,46 @@
                     <p style="text-align: center;">Figure 6. Squared loss vs logistic loss</p>
                     <br>
                     Informally, we can clearly see that both quadratic loss and log loss are convex (proven formally, they are!). We can also see that 0/1 loss is non-convex.
-                    What about the convexity of empirical risk?
+                    
+                    <br><br>
+                    <b>Various Ways to Check Convexity</b>
+                    <br><br>
+
+                    The first way is the <b>Line Segment Method</b> described above. <br>
+                    For any \(x,y \in \mathbb{R}^d\) and \(\alpha \in [0,1]\), f is a convex function when...
                     $$
-                    \frac{1}{N} \sum_{i=1}^N l(y^i w^T x^i)
+                    f(\alpha x + (1- \alpha)y) \leq \alpha f(x) + (1-\alpha)f(y)
                     $$
-                    We want to see if loss is convex with respect to w, not with respect to \(y^i w^T x^i\).
+
+                    The second way is the <b>Derivatives Method</b>: <br>
+                    For all \(x,y\), 
+                    $$
+                    f(y) \geq f(x) + \nabla f(x)^T(y-x)
+                    $$
+                    Intuitively, this is simply saying that if \(y \geq x\), then the gradient at \(y\) must be larger than the gradient at \(x\).
+                    <br><br>
+
+                    <img src="../assets/ml4/convex_gradient_graph.PNG" alt="Convex Gradient" style="display: block; margin: auto; width: 600px;">
+                    <p style="text-align: center;">Figure 7. Visualization of Derivatives Method</p>
+                    <br>
+
+                    <br><br>
+                    <b>Levels of Convexity</b>
+                    <br><br>
+
+                    There are 2 levels of convexity that should be noted. There is <b>strict convexity</b>, where the inequality defining the convexity of a function is strict:
+                    $$
+                    f(\alpha x + (1- \alpha)y) < \alpha f(x) + (1-\alpha)f(y)
+                    $$
+                    Graphically, this means that the line between points \(x\) and \(y\) remains strictly above the graph, it cannot be equivalent to the graph at any point.
+                    Logistic loss \(ln(1+e^{-z})\) is strictly convex.
+                    <br><br>
+                    This is also <b>\(\lambda\)-strong convexity</b>:
+                    $$
+                    f(\alpha x + (1- \alpha)y) \leq \alpha f(x) + (1-\alpha)f(y) - \frac{\lambda \alpha (1-\alpha)}{2}||x-y||^2
+                    $$
+                    In this case, there is a quadratic gap between function values and the line formed by \(x\) and \(y\). The intuition is that we can lower bound the function by a quadratic.
+                    Squared loss \(\frac{1}{2}(1-z)^2 \) is 1-strongly convex.
                     
                 </p>
             </div>
