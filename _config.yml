@@ -11,7 +11,7 @@ mode: dark # default theme "dark" | "light"
 
 # Profile settings
 author:
-  name: Hi, I'm Diana # author name
+  name: Diana Huang # author name
   bio: >- # tell to the world
     Test
   username: username # general username

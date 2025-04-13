@@ -1,22 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2025-03-25T11:29:12+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Klise Theme</title><subtitle>He&apos;s writing in Bahasa about web technology and experience as a journal  for documentation things that he learned, meet him &lt;a href=&quot;https://github.com/piharpi&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@github&lt;/a&gt;.</subtitle><author><name>Hi, I&apos;m Diana</name><email>your-email@email.com</email></author><entry><title type="html">Maths Example with Mathjax</title><link href="http://localhost:4000/maths-example/" rel="alternate" type="text/html" title="Maths Example with Mathjax" /><published>2021-06-17T05:57:49+07:00</published><updated>2021-06-17T05:57:49+07:00</updated><id>http://localhost:4000/maths-example</id><content type="html" xml:base="http://localhost:4000/maths-example/"><![CDATA[<p>Below is an example of maths using mathjax.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2025-04-13T08:04:07+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Klise Theme</title><subtitle>He&apos;s writing in Bahasa about web technology and experience as a journal  for documentation things that he learned, meet him &lt;a href=&quot;https://github.com/piharpi&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@github&lt;/a&gt;.</subtitle><author><name>Hi, I&apos;m Diana</name><email>your-email@email.com</email></author><entry><title type="html">Rec Room</title><link href="http://localhost:4000/maths-example/" rel="alternate" type="text/html" title="Rec Room" /><published>2025-04-11T00:00:00+07:00</published><updated>2025-04-11T00:00:00+07:00</updated><id>http://localhost:4000/maths-example</id><content type="html" xml:base="http://localhost:4000/maths-example/"><![CDATA[<figure>
+<img src="/assets/img/RecRoom_Banner.png" />
+</figure>
 
-<p>Any page needing maths should start with the frontmatter:</p>
+<h3 id="project-description">Project Description</h3>
+<p>Rec Room is an online cross-platform multiplayer game that blends UGC with interactive social experiences. Players can connect in a wide range of virtual spaces, from hangout rooms to co-op quests.</p>
 
-<figure class="highlight"><pre><code class="language-markdown" data-lang="markdown">usemathjax: true</code></pre></figure>
+<h2 id="platforms">Platforms</h2>
+<p>Steam, PC Standalone, iOS, Android, Quest VR, Xbox, PS4, PS5, Nintendo Switch</p>
 
-\[\begin{align*}
-y = y(x,t) &amp;= A e^{i\theta} \\
-&amp;= A (\cos \theta + i \sin \theta) \\
-&amp;= A (\cos(kx - \omega t) + i \sin(kx - \omega t)) \\
-&amp;= A\cos(kx - \omega t) + i A\sin(kx - \omega t)  \\
-&amp;= A\cos \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big) + i A\sin \Big(\frac{2\pi}{\lambda}x - \frac{2\pi v}{\lambda} t \Big)  \\
-&amp;= A\cos \frac{2\pi}{\lambda} (x - v t) + i A\sin \frac{2\pi}{\lambda} (x - v t)
-\end{align*}\]
+<h2 id="contribution-senior-gameplay-engineer">Contribution: Senior Gameplay Engineer</h2>
 
-<p>Inline maths can be written with the <code class="language-plaintext highlighter-rouge">\\(</code> and <code class="language-plaintext highlighter-rouge">\\)</code> characters, producing inline maths
-such as \(\delta(t) \xrightarrow{\mathscr{F}} 1\).</p>
+<p>Currently senior gameplay engineer on the Retention team. Responsible for overseeing large projects by delegating work, quantifying risk, and choosing technical design. Mentors junior engineers and ensures team’s code quality is at a high level through TDD and PR reviews.</p>
 
-<p>The above is accomplished with thanks to <a href="https://alanduan.me/random/mathjax/">Alan Duan</a> and <a href="https://webdocs.cs.ualberta.ca/~zichen2/blog/coding/setup/2019/02/17/how-to-add-mathjax-support-to-jekyll.html.">Zichen Vincent Zhang</a>.</p>]]></content><author><name>Hi, I&apos;m Diana</name><email>your-email@email.com</email></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[Below is an example of maths using mathjax.]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-08-29T09:29:20+07:00</published><updated>2020-08-29T09:29:20+07:00</updated><id>http://localhost:4000/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
+<p>A few projects that I was the dev owner of are:</p>
+<figure>
+<figcaption>Context sensitive ping system to facilitate multiplayer coordination. Added mobile double tap controls as part of project.
+</figcaption>
+<img src="/assets/img/coordinate_clip.gif" />
+</figure>
+
+<hr style="height:10pt; visibility:hidden;" />
+
+<figure>
+<figcaption>Worldspace UI transitions for NPC dialogue.
+</figcaption>
+<img src="/assets/img/ConvoUI.gif" />
+</figure>
+
+<hr style="height:10pt; visibility:hidden;" />
+
+<figure>
+<figcaption>Identified and addressed long load times via asset bundle recompression, removing sequential bottlnecks, &amp; scene preloading.
+</figcaption>
+<img src="" />
+</figure>
+
+<h2 id="contribution-gameplay-engineer">Contribution: Gameplay Engineer</h2>
+
+<p>Improved our player inventory system by adding item tags and customizable hotbar that integrated with the inventory UI and UGC ecosystem. Added UGC player progression system for <a href="https://rec-room.fandom.com/wiki/Make_It_To_Midnight">Make it to Midnight</a>. Updated several UI pages to newer UI redesign.</p>
+
+<figure>
+<figcaption> Sorting tabs and quick slots hotbar.
+</figcaption>
+<img src="/assets/img/SortingTabs.png" />
+<br />
+<img src="/assets/img/QuickSlots.png" />
+</figure>
+
+<h2 id="contribution-tools-engineer">Contribution: Tools Engineer</h2>
+
+<p>Joined the Rec Room team as a tools engineer. Developed several quality of life in-game tools - fps monitoring, bug reporting tool, revamped debug command UI. Worked with the art team to design and add an art item upload editor tool to upload avatar items and consumables from their local editor to the test server.</p>
+
+<figure>
+<figcaption> Art item upload tool.
+</figcaption>
+<img src="/assets/img/art_item_upload_tool.png" />
+<br />
+<img src="/assets/img/art_item_upload_tool_1.png" />
+</figure>]]></content><author><name>Hi, I&apos;m Diana</name><email>your-email@email.com</email></author><category term="jekyll" /><category term="update" /><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2020-08-29T09:29:20+07:00</published><updated>2020-08-29T09:29:20+07:00</updated><id>http://localhost:4000/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/welcome-to-jekyll/"><![CDATA[<p>You’ll find this post in your <code class="language-plaintext highlighter-rouge">_posts</code> directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run <code class="language-plaintext highlighter-rouge">jekyll serve</code>, which launches a web server and auto-regenerates your site when a file is updated.</p>
 
 <p>Jekyll requires blog post files to be named according to the following format:</p>
 
