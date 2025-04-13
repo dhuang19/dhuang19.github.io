@@ -1,34 +1,21 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2020-08-29 09:29:20 +0700
-categories: jekyll update
+title:  "Blizzard Entertainment"
+date:   2021-08-29
 usemathjax: true
 ---
 
+<figure>
+<img src="/assets/img/d2r.jpeg">
+</figure>
 
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+### Project Description
+I worked on QA tools that supported Diablo 2 Resurrected, Diablo Immortal, and World of Warcraft: Shadowlands. 
 
+## Contribution: Associate Tools Engineer
 
-Jekyll requires blog post files to be named according to the following format:
+Worked in a team of 5 engineers to develop Echo, a player feedback processing tool for the Diablo Immortal beta launch. Collaborated with the QA team to design and develop the user interface. Integrated a NLP library to deduplicate the millions of bug tickets that the live service received. Implemented a bootstrapper program to automate Echo updates.
 
-`YEAR-MONTH-DAY-title.MARKUP`
+## Contribution: Software Engineering Intern
 
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
-
-Jekyll also offers powerful support for code snippets:
-
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
-
-Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
-
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-talk]: https://talk.jekyllrb.com/
-
+Built a tool to report link integrity within the Blizzard company network. Fixed bugs with a live service testing API that bundled several proprietary services.
