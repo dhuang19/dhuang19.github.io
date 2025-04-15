@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2025-04-13T08:36:30+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Klise Theme</title><subtitle>He&apos;s writing in Bahasa about web technology and experience as a journal  for documentation things that he learned, meet him &lt;a href=&quot;https://github.com/piharpi&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@github&lt;/a&gt;.</subtitle><author><name>Diana Huang</name><email>your-email@email.com</email></author><entry><title type="html">Rec Room</title><link href="http://localhost:4000/maths-example/" rel="alternate" type="text/html" title="Rec Room" /><published>2025-04-11T00:00:00+07:00</published><updated>2025-04-11T00:00:00+07:00</updated><id>http://localhost:4000/maths-example</id><content type="html" xml:base="http://localhost:4000/maths-example/"><![CDATA[<figure>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en-US"><generator uri="https://jekyllrb.com/" version="4.1.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en-US" /><updated>2025-04-15T21:54:46+07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Klise Theme</title><subtitle>He&apos;s writing in Bahasa about web technology and experience as a journal  for documentation things that he learned, meet him &lt;a href=&quot;https://github.com/piharpi&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;@github&lt;/a&gt;.</subtitle><author><name>Diana Huang</name><email>your-email@email.com</email></author><entry><title type="html">Rec Room</title><link href="http://localhost:4000/maths-example/" rel="alternate" type="text/html" title="Rec Room" /><published>2025-04-11T00:00:00+07:00</published><updated>2025-04-11T00:00:00+07:00</updated><id>http://localhost:4000/maths-example</id><content type="html" xml:base="http://localhost:4000/maths-example/"><![CDATA[<figure>
 <img src="/assets/img/RecRoom_Banner.png" />
 </figure>
 
@@ -66,68 +66,11 @@
 
 <h2 id="contribution-associate-tools-engineer">Contribution: Associate Tools Engineer</h2>
 
-<p>Worked in a team of 5 engineers to develop Echo, a player feedback processing tool for the Diablo Immortal beta launch. Collaborated with the QA team to design and develop the user interface. Integrated a NLP library to deduplicate the millions of bug tickets that the live service received. Implemented a bootstrapper program to automate Echo updates.</p>
+<p>Worked in a team of 5 engineers to develop Echo, a player feedback processing tool for the Diablo Immortal beta launch. Collaborated with the QA team to design and develop the user interface. Integrated a TensorFlow NLP library to deduplicate the millions of bug tickets that the live service received. Implemented a bootstrapper program to automate Echo updates.</p>
 
 <h2 id="contribution-software-engineering-intern">Contribution: Software Engineering Intern</h2>
 
-<p>Built a tool to report link integrity within the Blizzard company network. Fixed bugs with a live service testing API that bundled several proprietary services.</p>]]></content><author><name>Diana Huang</name><email>your-email@email.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Cara ribet memperbarui forked repo</title><link href="http://localhost:4000/cara-memperbarui-fork-repository/" rel="alternate" type="text/html" title="Cara ribet memperbarui forked repo" /><published>2020-01-29T01:00:00+07:00</published><updated>2020-01-29T01:00:00+07:00</updated><id>http://localhost:4000/cara-memperbarui-fork-repository</id><content type="html" xml:base="http://localhost:4000/cara-memperbarui-fork-repository/"><![CDATA[<p>Berawal dari saya pengen memperbarui repo yang tua dari suatu organisasi, niatnya pengen rumat ulang nih, ternyata dari orginal reponya ada update, sekalian buat artikel deh, lebih kurang gambaranya seperti ini.</p>
-
-<figure>
-<img src="/cara-memperbarui-fork-repository/repo.png" alt="ilustrasi repo yang mau diupdate" />
-<figcaption>Fig 1. Gambaran ribetnya.</figcaption>
-</figure>
-
-<p>Ada dua cara untuk memperbarui forked repository menggunakan web interface yang disediakan oleh github tapi ribet, atau melalui terminal yang lebih ribet lagi.</p>
-
-<h3 id="melalui-github-boring-way-">Melalui Github (boring way) 💻</h3>
-
-<ol>
-  <li>Buka repo yang hasil fork di Github.</li>
-  <li>Klik <strong>Pull Requests</strong> di sebelah kanan, lalu <strong>New Pull Request</strong>.</li>
-  <li>Akan memunculkan hasil compare antara repo upstream dengan repo kamu(forked repo), dan jika menyatakan “There isn’t anything to compare.”, tekan link <strong>switching the base</strong>, yang mana sekarang repo kamu(forked repo) akan dibalik menjadi base repo dan repo upstream menjadi head repo.</li>
-  <li>Tekan <strong>Create Pull Request</strong>, beri judul pull request, Tekan <strong>Send Pull Request</strong>.</li>
-  <li>Tekan <strong>Merge Pull Request</strong> dan <strong>Confirm Merge</strong>.</li>
-</ol>
-
-<p>* <em>pastikan kamu tidak merubah apapun pada forked repo, supaya melakukan merge secara otomatis, kalo tidak ya paling2 konflik.</em></p>
-
-<h3 id="melalui-terminal-️">Melalui terminal ⌨️</h3>
-
-<p>Tambahkan remote alamat repository yang aslinya disini tak beri nama <code class="language-plaintext highlighter-rouge">upstream</code>., ganti <code class="language-plaintext highlighter-rouge">ORIGINAL_OWNER</code> dan <code class="language-plaintext highlighter-rouge">ORIGINAL_REPO</code> dengan alamat repo aslimu.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add remote upstream git@github.com:ORIGINAL_OWNER/ORIGINAL_REPO.git
-<span class="nv">$ </span>git remote <span class="nt">-v</span>
-<span class="o">&gt;</span> origin    git@github.com:piharpi/www.git <span class="o">(</span>fetch<span class="o">)</span> <span class="c"># forked repo</span>
-<span class="o">&gt;</span> origin    git@github.com:piharpi/www.git <span class="o">(</span>push<span class="o">)</span> <span class="c"># forked repo</span>
-<span class="o">&gt;</span> upstream    git@github.com:ORIGINAL_OWNER/ORIGINAL_REPO.git <span class="o">(</span>fetch<span class="o">)</span> <span class="c"># upstream repo / original repo</span>
-<span class="o">&gt;</span> upstream    git@github.com:ORIGINAL_OWNER/ORIGINAL_REPO.git <span class="o">(</span>push<span class="o">)</span> <span class="c"># upstream repo / original repo</span>
-</code></pre></div></div>
-
-<p>Checkout ke local branch <code class="language-plaintext highlighter-rouge">master</code>.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git checkout master
-<span class="o">&gt;</span> Switched to branch <span class="s1">'master'</span>
-</code></pre></div></div>
-
-<p>Jika sudah, Merge local repo dengan remote <code class="language-plaintext highlighter-rouge">upstream/master</code>.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git merge upstream/master
-</code></pre></div></div>
-
-<p>Terakhir push local repo ke remote <code class="language-plaintext highlighter-rouge">origin</code>.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>git add <span class="nt">-A</span>
-<span class="nv">$ </span>git commit <span class="nt">-m</span> <span class="s2">"updating origin repo"</span> <span class="o">&amp;&amp;</span> git push <span class="nt">-u</span> origin master
-</code></pre></div></div>
-
-<p>Selamat mencoba cara ribet ini, semoga bisa dipahami, saya sendiri lebih senang melalui terminal, klo ada yang ribet kenapa cari yang mudah.</p>
-
-<h5 id="resources">Resources</h5>
-
-<ul>
-  <li><a href="https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork">Syncing a fork</a></li>
-  <li><a href="https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/#top">Update your fork directly on Github</a></li>
-</ul>]]></content><author><name>Diana Huang</name><email>your-email@email.com</email></author><category term="tips" /><category term="git" /><category term="software" /><summary type="html"><![CDATA[Ada dua cara untuk memperbarui forked repository menggunakan web interface yang disediakan oleh github tapi ribet, atau melalui terminal yang lebih ribet lagi.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/cara-memperbarui-fork-repository/repo.png" /><media:content medium="image" url="http://localhost:4000/cara-memperbarui-fork-repository/repo.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">What is a shell? 🐚 adalah kerang ajaib?</title><link href="http://localhost:4000/apa-itu-shell/" rel="alternate" type="text/html" title="What is a shell? 🐚 adalah kerang ajaib?" /><published>2020-01-25T11:58:47+07:00</published><updated>2020-01-25T11:58:47+07:00</updated><id>http://localhost:4000/apa-itu-shell</id><content type="html" xml:base="http://localhost:4000/apa-itu-shell/"><![CDATA[<p><a href="http://www.youtube.com/watch?v=tc4ROCJYbm0&amp;t=70" target="_blank" rel="noopener">Dulu</a> Sebelum adanya <abbr title="Graphical User Interface">GUI</abbr> cara user berinteraksi dengan komputer menggunakan <abbr title="Command Line Interface">CLI</abbr> yaitu mengetik baris perintah pada sebuah antarmuka dalam bentuk baris teks seperti 👇.</p>
+<p>Built a tool to report link integrity within the Blizzard company network. Fixed bugs with a live service testing API that bundled several internal proprietary services.</p>]]></content><author><name>Diana Huang</name><email>your-email@email.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">What is a shell? 🐚 adalah kerang ajaib?</title><link href="http://localhost:4000/apa-itu-shell/" rel="alternate" type="text/html" title="What is a shell? 🐚 adalah kerang ajaib?" /><published>2020-01-25T11:58:47+07:00</published><updated>2020-01-25T11:58:47+07:00</updated><id>http://localhost:4000/apa-itu-shell</id><content type="html" xml:base="http://localhost:4000/apa-itu-shell/"><![CDATA[<p><a href="http://www.youtube.com/watch?v=tc4ROCJYbm0&amp;t=70" target="_blank" rel="noopener">Dulu</a> Sebelum adanya <abbr title="Graphical User Interface">GUI</abbr> cara user berinteraksi dengan komputer menggunakan <abbr title="Command Line Interface">CLI</abbr> yaitu mengetik baris perintah pada sebuah antarmuka dalam bentuk baris teks seperti 👇.</p>
 
 <figure>
 <img src="/apa-itu-shell/terminal_nginx.gif" alt="installing nginx in ubuntu" />
@@ -296,7 +239,49 @@ yah sesuai dengan <a href="http://fishshell.com/" target="_blank" rel="noopener"
 
 <p>Wait for moment, and voila..! your site’s are hosting and using <code class="language-plaintext highlighter-rouge">.netlify.com</code> tld, if your website wants to look professional, just buy a domain from your favorite domain store. or if you the first time, I advice using namecheap.com<em>(isn’t sponsor)</em> *based on my experienced it provides good service and have various TLDs.</p>
 
-<p>So, what you waiting for, just create your own website for free.</p>]]></content><author><name>Diana Huang</name><email>your-email@email.com</email></author><category term="blog" /><category term="netlify" /><category term="jekyll" /><category term="github" /><summary type="html"><![CDATA[All the services are free, a source code this site placed on github repository and intergration with netlify service, another service that you can use is github page for hosting your own static site.]]></summary></entry><entry><title type="html">Python Notes from Intro to Machine Learning</title><link href="http://localhost:4000/python-notes-from-Intro-to-machine-learning/" rel="alternate" type="text/html" title="Python Notes from Intro to Machine Learning" /><published>2018-04-14T10:00:00+07:00</published><updated>2018-04-14T10:00:00+07:00</updated><id>http://localhost:4000/python-notes-from-Intro-to-machine-learning</id><content type="html" xml:base="http://localhost:4000/python-notes-from-Intro-to-machine-learning/"><![CDATA[<p><strong>This article is for Demo purpose</strong></p>
+<p>So, what you waiting for, just create your own website for free.</p>]]></content><author><name>Diana Huang</name><email>your-email@email.com</email></author><category term="blog" /><category term="netlify" /><category term="jekyll" /><category term="github" /><summary type="html"><![CDATA[All the services are free, a source code this site placed on github repository and intergration with netlify service, another service that you can use is github page for hosting your own static site.]]></summary></entry><entry><title type="html">Mechmania 24 &amp;amp; 25</title><link href="http://localhost:4000/cara-memperbarui-fork-repository/" rel="alternate" type="text/html" title="Mechmania 24 &amp;amp; 25" /><published>2018-06-07T00:00:00+07:00</published><updated>2018-06-07T00:00:00+07:00</updated><id>http://localhost:4000/cara-memperbarui-fork-repository</id><content type="html" xml:base="http://localhost:4000/cara-memperbarui-fork-repository/"><![CDATA[<figure>
+<img src="/assets/img/mm24.png" />
+</figure>
+
+<h3 id="project-description">Project Description</h3>
+
+<p><a href="https://web.archive.org/web/20161003064135/https://en.wikipedia.org/wiki/MechMania">MechMania</a> is a 24-hour AI hackathon held annually at the Reflections Projections tech conference hosted by ACM at UIUC.</p>
+
+<p>I was on the MechMania staff in 2018 &amp; 2019. We take a year to build a game in relative secrecy. The game is unveiled at the ceremony, after which competitors have 24 hours to build a bot to best other teams.</p>
+
+<figure>
+<figcaption> MechMania 24 contestant scripts battling
+</figcaption>
+<iframe style="display: block; margin: auto;" width="475" height="330" src="https://www.youtube.com/embed/HPcM6-hJGAw"></iframe>
+</figure>
+
+<h2 id="tech">Tech</h2>
+<p>C# &amp; Unity for visualizer <br />
+C++ for server <br />
+C++, C#, Java, Python client for contestants</p>
+
+<h2 id="contribution-visualizer-team-lead">Contribution: Visualizer Team Lead</h2>
+
+<p>The visualizer team is responsible for receiving streams of game state data from the server and visualizing the game in Unity. I joined in MechMania 24 as a contributor and was the visualizer team lead for MechMania 25.</p>
+
+<p>Contributions included:</p>
+<ul class="mb-0">
+  <li>Modified a JSON deserializer for our game state data</li>
+  <li>Developed a map generation tool to streamline the game design team's workflow
+  </li>
+  <li>Implemented visualizer UI and dynamic orthographic camera movements</li>
+  <li>Coordinated with server team to ensure readiness by the one year deadline</li>
+</ul>
+
+<p>While <a href="https://www.twitch.tv/mechmania_tv/about">streaming on twitch</a>, we were the top programming stream on twitch for its duration with 585 viewers!</p>
+
+<figure>
+<img src="/assets/img/mm19-comp.jpg" />
+<br />
+<img src="/assets/img/mm-audience.jpg" />
+<br />
+<img src="/assets/img/mm19-team.jpg" />
+</figure>]]></content><author><name>Diana Huang</name><email>your-email@email.com</email></author><summary type="html"><![CDATA[]]></summary></entry><entry><title type="html">Python Notes from Intro to Machine Learning</title><link href="http://localhost:4000/python-notes-from-Intro-to-machine-learning/" rel="alternate" type="text/html" title="Python Notes from Intro to Machine Learning" /><published>2018-04-14T10:00:00+07:00</published><updated>2018-04-14T10:00:00+07:00</updated><id>http://localhost:4000/python-notes-from-Intro-to-machine-learning</id><content type="html" xml:base="http://localhost:4000/python-notes-from-Intro-to-machine-learning/"><![CDATA[<p><strong>This article is for Demo purpose</strong></p>
 
 <p>The article was originally on <a href="https://github.com/risan/risanb.com/blob/master/content/posts/python-notes-from-intro-to-machine-learning/index.md">this repo</a></p>
 

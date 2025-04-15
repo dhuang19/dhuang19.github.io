@@ -14,8 +14,8 @@ I worked on QA tools that supported Diablo 2 Resurrected, Diablo Immortal, and W
 
 ## Contribution: Associate Tools Engineer
 
-Worked in a team of 5 engineers to develop Echo, a player feedback processing tool for the Diablo Immortal beta launch. Collaborated with the QA team to design and develop the user interface. Integrated a NLP library to deduplicate the millions of bug tickets that the live service received. Implemented a bootstrapper program to automate Echo updates.
+Worked in a team of 5 engineers to develop Echo, a player feedback processing tool for the Diablo Immortal beta launch. Collaborated with the QA team to design and develop the user interface. Integrated a TensorFlow NLP library to deduplicate the millions of bug tickets that the live service received. Implemented a bootstrapper program to automate Echo updates.
 
 ## Contribution: Software Engineering Intern
 
-Built a tool to report link integrity within the Blizzard company network. Fixed bugs with a live service testing API that bundled several proprietary services.
+Built a tool to report link integrity within the Blizzard company network. Fixed bugs with a live service testing API that bundled several internal proprietary services.

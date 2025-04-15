@@ -17,14 +17,6 @@
     } ,
   
     {
-      "title"    : "Cara ribet memperbarui forked repo",
-      "description" : "Ada dua cara untuk memperbarui forked repository menggunakan web interface yang disediakan oleh github tapi ribet, atau melalui terminal yang lebih ribet lagi.",
-      "tags"     : "tips, git, software",
-      "url"      : "/cara-memperbarui-fork-repository/",
-      "date"     : "2020-01-29 01:00:00 +0700"
-    } ,
-  
-    {
       "title"    : "What is a shell? 🐚 adalah kerang ajaib?",
       "description" : "Shell adalah sebuah command-line interpreter; program yang berperan sebagai penerjemah perintah yang diinputkan oleh User yang melalui terminal, sehingga perintah tersebut bisa dimengerti oleh si Kernel.",
       "tags"     : "unix/linux, cli",
@@ -38,6 +30,14 @@
       "tags"     : "blog, netlify, jekyll, github",
       "url"      : "/how-this-site-was-made/",
       "date"     : "2018-09-28 09:45:47 +0700"
+    } ,
+  
+    {
+      "title"    : "Mechmania 24 &amp; 25",
+      "description" : "",
+      "tags"     : "",
+      "url"      : "/cara-memperbarui-fork-repository/",
+      "date"     : "2018-06-07 00:00:00 +0700"
     } ,
   
     {
