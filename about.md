@@ -1,18 +1,23 @@
 ---
-title: Colophon
+title: About
 permalink: /about/
 layout: page
-excerpt: Hello peeps, I'm student of computer science from Banyuwangi, living in Jogjakarta. This blog for documentation about my programming journey, running on jekyll, hosting on netlify and using my own simple theme.
 comments: false
 ---
 
-He's a student from Banyuwangi, living in Jogjakarta. the blog for documentation about his programming 🎒 journey, running on jekyll, hosting on [now.sh](http://now.sh) and using his own theme, he name it <a href="https://github.com/piharpi/jekyll-klise" target="_blank" rel="noopener">klisé</a>, he also loves to learning web technology; but he often forgot, that a reason why him doing the writing.
+Hey, welcome to my online portfolio!
 
-If you have a question about him or else, just send a letter to him.
+I'm a gameplay & tools engineer interested in solving challenging technical problems and working with designers to find the fun in gameplay features. I care about working with other driven devs to build the best experience for our players.
 
-You can [report](http://github.com/piharpi/jekyll-klise/issues/new) if there is an broken link(s) or somethings else.
+I got my start at the University of Illinois at Urbana Champaign as a CS major (2020 grad). I built several personal game projects and served on the MechMania dev team, a game hackathon that goes back to 1995. I was lucky enough to intern at Blizzard Ent and joined full time as a tools engineer after graduation. I later joined Rec Room and am currently a senior gameplay engineer there!
 
-**may u needs ✨**
+<a href="/assets/img/Resume_2025.pdf">Resume 2025</a>
 
-- {{ site.author.email }}
-- github.com/{{ site.author.github }}
+**Contact me ✨**
+<br>
+dianaqhuang@gmail.com
+<br>
+<a href="[url](https://github.com/dhuang19)">github profile</a>
+<br>
+<a href="[url](https://www.linkedin.com/in/dianaqhuang/)">linkedin profile</a>
+
