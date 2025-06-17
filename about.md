@@ -17,7 +17,5 @@ I got my start at the University of Illinois at Urbana Champaign as a CS major (
 <br>
 dianaqhuang@gmail.com
 <br>
-<a href="[url](https://github.com/dhuang19)">github profile</a>
-<br>
-<a href="[url](https://www.linkedin.com/in/dianaqhuang/)">linkedin profile</a>
+<a href="https://www.linkedin.com/in/dianaqhuang/">linkedin profile</a>
 
